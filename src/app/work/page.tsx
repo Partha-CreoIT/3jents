@@ -4,6 +4,7 @@ import SectionWrapper from '@/components/sections/SectionWrapper';
 import ProjectCard from '@/components/cards/ProjectCard';
 import Carousel from '@/components/sections/Carousel';
 import ContactForm from '@/components/forms/ContactForm';
+import LightRays from '@/components/LightRays';
 
 // Featured projects with actual poster images - theater & film collective
 const projects = [
@@ -61,7 +62,18 @@ const productionStills = [
 
 export default function PastWork() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LightRays
+        raysOrigin="center"
+        raysColor="#FFD700"
+        raysSpeed={0.5}
+        lightSpread={2.1}
+        rayLength={1.5}
+        followMouse={true}
+        mouseInfluence={0.25}
+        className="absolute inset-0"
+      />
+      <div className="relative z-10">
       {/* Hero Section */}
       <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
         <div className="max-w-4xl mx-auto text-center">
@@ -179,6 +191,7 @@ export default function PastWork() {
           </div>
         </div>
       </SectionWrapper>
+      </div>
     </div>
   );
 }

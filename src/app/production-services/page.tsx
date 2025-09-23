@@ -3,6 +3,7 @@
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import ServiceCard from '@/components/cards/ServiceCard';
 import ContactForm from '@/components/forms/ContactForm';
+import LightRays from '@/components/LightRays';
 import { Film, Users, Music, Camera, Mic, Settings } from 'lucide-react';
 
 // Service data based on requirements
@@ -84,7 +85,18 @@ const services = [
 
 export default function ProductionServices() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LightRays
+        raysOrigin="top-left"
+        raysColor="#FFD700"
+        raysSpeed={0.55}
+        lightSpread={1.4}
+        rayLength={1.9}
+        followMouse={true}
+        mouseInfluence={0.28}
+        className="absolute inset-0"
+      />
+      <div className="relative z-10">
       {/* Hero Section */}
       <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
         <div className="max-w-4xl mx-auto text-center">
@@ -193,6 +205,7 @@ export default function ProductionServices() {
           </div>
         </div>
       </SectionWrapper>
+      </div>
     </div>
   );
 }

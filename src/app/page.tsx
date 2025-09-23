@@ -5,31 +5,46 @@ import { motion } from 'framer-motion';
 import { Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
-import Carousel from '@/components/sections/Carousel';
+import Masonry from '@/components/Masonry';
 import ContactForm from '@/components/forms/ContactForm';
 
-// Placeholder carousel items - replace with actual content
-const carouselItems = [
+// Masonry items for recent productions
+const masonryItems = [
   {
     id: '1',
-    imageUrl: '/placeholder-poster-1.jpg',
-    alt: 'Production poster 1',
-    title: 'Latest Production',
-    description: 'Check out our most recent work',
+    img: '/pastwork/slaps.PNG',
+    url: '/past-work',
+    height: 400,
   },
   {
     id: '2',
-    imageUrl: '/placeholder-poster-2.jpg',
-    alt: 'Production poster 2',
-    title: 'Collaborator Spotlight',
-    description: 'Featuring amazing talent from our network',
+    img: '/pastwork/youcant.jpeg',
+    url: '/past-work',
+    height: 600,
   },
   {
     id: '3',
-    imageUrl: '/placeholder-poster-3.jpg',
-    alt: 'Production poster 3',
-    title: 'Behind the Scenes',
-    description: 'See the magic happen',
+    img: '/pastwork/somtimes_poster.jpeg',
+    url: '/past-work',
+    height: 500,
+  },
+  {
+    id: '4',
+    img: '/pastwork/promo.mp4',
+    url: '/past-work',
+    height: 450,
+  },
+  {
+    id: '5',
+    img: '/founder/founder.png',
+    url: '/team',
+    height: 350,
+  },
+  {
+    id: '6',
+    img: '/founder/founder_1.png',
+    url: '/team',
+    height: 550,
   },
 ];
 
@@ -110,7 +125,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Media Carousel Section */}
+      {/* Recent Productions Masonry Section */}
       <SectionWrapper className="bg-black/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
@@ -121,13 +136,16 @@ export default function Home() {
               Explore our latest theatrical and cinematic works, featuring incredible talent and collaborative storytelling
             </p>
           </div>
-          <Carousel
-            items={carouselItems}
-            autoPlay={true}
-            autoPlayInterval={4000}
-            showControls={true}
-            showIndicators={true}
-          />
+          <div className="h-[800px]">
+            <Masonry
+              items={masonryItems}
+              animateFrom="bottom"
+              scaleOnHover={true}
+              hoverScale={0.95}
+              blurToFocus={true}
+              colorShiftOnHover={true}
+            />
+          </div>
         </div>
       </SectionWrapper>
 

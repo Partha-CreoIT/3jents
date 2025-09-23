@@ -3,6 +3,7 @@
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import TeamCard from '@/components/cards/TeamCard';
 import ContactForm from '@/components/forms/ContactForm';
+import LightRays from '@/components/LightRays';
 
 const founders = [
   {
@@ -68,7 +69,18 @@ const houseEmployees = {
 
 export default function OurTeam() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LightRays
+        raysOrigin="bottom-center"
+        raysColor="#FFD700"
+        raysSpeed={0.3}
+        lightSpread={1.5}
+        rayLength={1.8}
+        followMouse={true}
+        mouseInfluence={0.2}
+        className="absolute inset-0"
+      />
+      <div className="relative z-10">
       {/* Hero Section */}
       <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
         <div className="max-w-4xl mx-auto text-center">
@@ -227,6 +239,7 @@ export default function OurTeam() {
           </div>
         </div>
       </SectionWrapper>
+      </div>
     </div>
   );
 }

@@ -3,6 +3,7 @@
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import Carousel from '@/components/sections/Carousel';
 import ContactForm from '@/components/forms/ContactForm';
+import LightRays from '@/components/LightRays';
 import { Button } from '@/components/ui/button';
 import { Calendar, Camera, Users, Music } from 'lucide-react';
 
@@ -59,7 +60,18 @@ const photographers = [
 
 export default function Photography() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LightRays
+        raysOrigin="bottom-left"
+        raysColor="#FFD700"
+        raysSpeed={0.35}
+        lightSpread={1.6}
+        rayLength={1.7}
+        followMouse={true}
+        mouseInfluence={0.3}
+        className="absolute inset-0"
+      />
+      <div className="relative z-10">
       {/* Hero Section */}
       <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
         <div className="max-w-4xl mx-auto text-center">
@@ -215,6 +227,7 @@ export default function Photography() {
           </div>
         </div>
       </SectionWrapper>
+      </div>
     </div>
   );
 }

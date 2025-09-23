@@ -16,7 +16,7 @@ export default function Footer() {
                   alt="3 Jokers Entertainment"
                   width={80}
                   height={80}
-                  className="h-16 w-auto"
+                  className="h-28 w-auto"
                 />
                 <span className="text-3xl font-bold text-gold hover:text-gold-light transition-colors font-heading">
                   3 Jokers Entertainment

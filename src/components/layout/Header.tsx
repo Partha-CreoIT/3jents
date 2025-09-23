@@ -24,7 +24,7 @@ export default function Header() {
   const pathname = usePathname();
 
   return (
-    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-xl border border-gold/20 rounded-full px-8 py-3 shadow-2xl">
+    <header className="fixed top-4 left-1/2 transform -translate-x-1/2 z-50 bg-black/80 backdrop-blur-xl border border-gold/20 rounded-full px-6 py-2 shadow-2xl">
       <div className="flex justify-between items-center space-x-8">
         <div className="flex-shrink-0">
           <Link href="/" className="block">
@@ -33,7 +33,7 @@ export default function Header() {
               alt="3 Jokers Entertainment"
               width={160}
               height={60}
-              className="h-12 w-auto hover:opacity-80 transition-opacity"
+              className="h-16 w-auto hover:opacity-80 transition-opacity"
             />
           </Link>
         </div>

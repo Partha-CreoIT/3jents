@@ -4,10 +4,22 @@ import SectionWrapper from '@/components/sections/SectionWrapper';
 import { Button } from '@/components/ui/button';
 import { ExternalLink, Users, Lightbulb, Heart } from 'lucide-react';
 import ContactForm from '@/components/forms/ContactForm';
+import LightRays from '@/components/LightRays';
 
-export default function GetInvolved() {
+export default function Contact() {
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen relative">
+      <LightRays
+        raysOrigin="top-right"
+        raysColor="#FFD700"
+        raysSpeed={0.45}
+        lightSpread={2.2}
+        rayLength={1.3}
+        followMouse={true}
+        mouseInfluence={0.4}
+        className="absolute inset-0"
+      />
+      <div className="relative z-10">
       {/* Hero Section */}
       <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
         <div className="max-w-4xl mx-auto text-center">
@@ -197,6 +209,7 @@ export default function GetInvolved() {
           </div>
         </div>
       </SectionWrapper>
+      </div>
     </div>
   );
 }
