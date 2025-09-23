@@ -46,7 +46,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="/pastwork/promo.mp4" type="video/mp4" />
+          <source src="https://minio-4.creox.dev/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3B1YmxpY3N0b3JhZ2UvQnJvb2tseW4lMjBCYWJ5JTIwUHJvbW8lMjAtJTIwTmljayUyMEJlbGxhJTIwXyUyMERCSUcubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9OE9JNjFQSEJZNjNCMlVRSjRIVlMlMkYyMDI1MDkyMyUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MjNUMTEyNjQ0WiZYLUFtei1FeHBpcmVzPTQzMjAwJlgtQW16LVNlY3VyaXR5LVRva2VuPWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoWTJObGMzTkxaWGtpT2lJNFQwazJNVkJJUWxrMk0wSXlWVkZLTkVoV1V5SXNJbVY0Y0NJNk1UYzFPRFkyT0RnNE5pd2ljR0Z5Wlc1MElqb2liV2x1YVc5aFpHMXBiaUo5LjB2bzNCX0pTeDZZV2V1Um4xMXFqWG5KdnVCLTdma0c4U2JiTF9UUnhPVzdqZlJzalpXclBuTnllRFZLM2d1eFZxZTltN09qYzFXWWtoTWl5MlNaMmRnJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZ2ZXJzaW9uSWQ9bnVsbCZYLUFtei1TaWduYXR1cmU9MjkzMzQwZDNjOTgwNzY2ZWY0Njg0MWJjYTdhODcwODZiNWRjM2ZmNWJhNGQyMDA5NGU5NjBmYjZmYzVmMWI5Yw" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
