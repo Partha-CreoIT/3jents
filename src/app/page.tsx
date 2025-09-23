@@ -99,7 +99,7 @@ export default function Home() {
                 asChild
                 variant="outline"
                 size="lg"
-                className="border-gold text-gold hover:bg-gold hover:text-black font-semibold px-8 py-3 font-accent"
+                className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
               >
                 <Link href="/contact">
                   Get In Touch
