@@ -1,0 +1,171 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  /* Custom 3JE colors */
+  --color-gold: var(--gold);
+  --color-gold-light: var(--gold-light);
+  --color-gold-dark: var(--gold-dark);
+  --color-black: var(--black);
+  --color-white: var(--white);
+  --color-grey: var(--grey);
+  --color-grey-light: var(--grey-light);
+  --color-grey-dark: var(--grey-dark);
+  --color-yellow: var(--yellow);
+  --color-beige: var(--beige);
+  --color-brown: var(--brown);
+  --color-brown-light: var(--brown-light);
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
+  --font-accent: var(--font-oswald);
+  --color-sidebar-ring: var(--sidebar-ring);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar: var(--sidebar);
+  --color-chart-5: var(--chart-5);
+  --color-chart-4: var(--chart-4);
+  --color-chart-3: var(--chart-3);
+  --color-chart-2: var(--chart-2);
+  --color-chart-1: var(--chart-1);
+  --color-ring: var(--ring);
+  --color-input: var(--input);
+  --color-border: var(--border);
+  --color-destructive: var(--destructive);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-accent: var(--accent);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-muted: var(--muted);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-secondary: var(--secondary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-primary: var(--primary);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-popover: var(--popover);
+  --color-card-foreground: var(--card-foreground);
+  --color-card: var(--card);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+}
+
+:root {
+  --radius: 0.625rem;
+  /* 3 Jokers Entertainment color palette: theater & film collective colors */
+  --gold: #C7AF6B;
+  --gold-light: #D4C087;
+  --gold-dark: #B59C55;
+  --black: #000000;
+  --white: #F8F8F8;
+  --beige: #D4A574;
+  --brown: #8B4513;
+  --brown-light: #A0522D;
+  --grey: #4A4A4A;
+  --grey-light: #8A8A8A;
+  --grey-dark: #2A2A2A;
+  --accent-orange: #FF6B35;
+
+  --background: var(--white);
+  --foreground: var(--black);
+  --card: var(--white);
+  --card-foreground: var(--black);
+  --popover: var(--white);
+  --popover-foreground: var(--black);
+  --primary: var(--gold);
+  --primary-foreground: var(--black);
+  --secondary: var(--beige);
+  --secondary-foreground: var(--black);
+  --muted: var(--grey-light);
+  --muted-foreground: var(--grey-dark);
+  --accent: var(--yellow);
+  --accent-foreground: var(--black);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: var(--grey);
+  --input: var(--grey-light);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
+  --chart-2: var(--yellow);
+  --chart-3: var(--brown);
+  --chart-4: var(--beige);
+  --chart-5: var(--grey);
+  --sidebar: var(--white);
+  --sidebar-foreground: var(--black);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--black);
+  --sidebar-accent: var(--beige);
+  --sidebar-accent-foreground: var(--black);
+  --sidebar-border: var(--grey);
+  --sidebar-ring: var(--gold);
+}
+
+.dark {
+  /* Dark theme using 3JE color palette */
+  --gold: oklch(0.8 0.18 85);
+  --gold-light: oklch(0.9 0.15 85);
+  --gold-dark: oklch(0.7 0.2 85);
+  --black: oklch(0.05 0 0);
+  --white: oklch(0.95 0 0);
+  --grey: oklch(0.4 0 0);
+  --grey-light: oklch(0.6 0 0);
+  --grey-dark: oklch(0.2 0 0);
+  --yellow: oklch(0.9 0.22 85);
+  --beige: oklch(0.8 0.06 75);
+  --brown: oklch(0.5 0.1 45);
+  --brown-light: oklch(0.7 0.08 45);
+
+  --background: var(--black);
+  --foreground: var(--white);
+  --card: var(--grey-dark);
+  --card-foreground: var(--white);
+  --popover: var(--grey-dark);
+  --popover-foreground: var(--white);
+  --primary: var(--gold);
+  --primary-foreground: var(--black);
+  --secondary: var(--brown);
+  --secondary-foreground: var(--white);
+  --muted: var(--grey);
+  --muted-foreground: var(--grey-light);
+  --accent: var(--yellow);
+  --accent-foreground: var(--black);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: var(--grey);
+  --input: var(--grey-dark);
+  --ring: var(--gold);
+  --chart-1: var(--gold);
+  --chart-2: var(--yellow);
+  --chart-3: var(--brown);
+  --chart-4: var(--beige);
+  --chart-5: var(--grey);
+  --sidebar: var(--grey-dark);
+  --sidebar-foreground: var(--white);
+  --sidebar-primary: var(--gold);
+  --sidebar-primary-foreground: var(--black);
+  --sidebar-accent: var(--brown);
+  --sidebar-accent-foreground: var(--white);
+  --sidebar-border: var(--grey);
+  --sidebar-ring: var(--gold);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground font-body;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+  .font-accent {
+    font-family: var(--font-accent);
+  }
+}
