@@ -98,14 +98,14 @@ export default function ProductionServices() {
       />
       <div className="relative z-10">
       {/* Hero Section */}
-      <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
             Production Services
           </h1>
           <p className="text-xl md:text-2xl text-grey-light leading-relaxed">
             Comprehensive film production services to bring your creative vision to life.
-            From concept to completion, we've got you covered.
+            From concept to completion, we&apos;ve got you covered.
           </p>
         </div>
       </SectionWrapper>
@@ -138,7 +138,7 @@ export default function ProductionServices() {
       </SectionWrapper>
 
       {/* Process Section */}
-      <SectionWrapper className="bg-black/80">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md">
         <div className="max-w-4xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
@@ -189,14 +189,14 @@ export default function ProductionServices() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
               Ready to Start Your Project?
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto">
-              Let's discuss your vision and how our production services can help bring it to life.
+              Let&apos;s discuss your vision and how our production services can help bring it to life.
               Get in touch for a free consultation and quote.
             </p>
           </div>

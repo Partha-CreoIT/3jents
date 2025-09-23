@@ -2,51 +2,9 @@
 
 import Link from 'next/link';
 import { motion } from 'framer-motion';
-import { Heart, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
-import Masonry from '@/components/Masonry';
 import ContactForm from '@/components/forms/ContactForm';
-
-// Masonry items for recent productions
-const masonryItems = [
-  {
-    id: '1',
-    img: '/pastwork/slaps.PNG',
-    url: '/past-work',
-    height: 400,
-  },
-  {
-    id: '2',
-    img: '/pastwork/youcant.jpeg',
-    url: '/past-work',
-    height: 600,
-  },
-  {
-    id: '3',
-    img: '/pastwork/somtimes_poster.jpeg',
-    url: '/past-work',
-    height: 500,
-  },
-  {
-    id: '4',
-    img: '/pastwork/promo.mp4',
-    url: '/past-work',
-    height: 450,
-  },
-  {
-    id: '5',
-    img: '/founder/founder.png',
-    url: '/team',
-    height: 350,
-  },
-  {
-    id: '6',
-    img: '/founder/founder_1.png',
-    url: '/team',
-    height: 550,
-  },
-];
 
 export default function Home() {
   return (
@@ -106,58 +64,38 @@ export default function Home() {
                 size="lg"
                 className="bg-gold hover:bg-gold-light text-black font-semibold px-8 py-3 font-accent"
               >
-                <Link href="/work">
+                <Link href="/past-work">
                   Explore Our Work
                 </Link>
               </Button>
               <Button
-                asChild
+                onClick={() => {
+                  const contactSection = document.getElementById('contact');
+                  if (contactSection) {
+                    contactSection.scrollIntoView({ behavior: 'smooth' });
+                  }
+                }}
                 variant="outline"
                 size="lg"
                 className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
               >
-                <Link href="/contact">
-                  Get In Touch
-                </Link>
+                Get In Touch
               </Button>
             </motion.div>
           </motion.div>
         </div>
       </section>
 
-      {/* Recent Productions Masonry Section */}
-      <SectionWrapper className="bg-black/80">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4 font-heading">
-              Recent Productions
-            </h2>
-            <p className="text-grey-light max-w-2xl mx-auto font-body">
-              Explore our latest theatrical and cinematic works, featuring incredible talent and collaborative storytelling
-            </p>
-          </div>
-          <div className="h-[800px]">
-            <Masonry
-              items={masonryItems}
-              animateFrom="bottom"
-              scaleOnHover={true}
-              hoverScale={0.95}
-              blurToFocus={true}
-              colorShiftOnHover={true}
-            />
-          </div>
-        </div>
-      </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper id="contact" className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4 font-heading">
               Ready to Create Something Amazing?
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto font-body">
-              Let's collaborate on your next theatrical or cinematic project. Reach out to discuss your vision and how we can bring it to life together.
+              Let&apos;s collaborate on your next theatrical or cinematic project. Reach out to discuss your vision and how we can bring it to life together.
             </p>
           </div>
           <div className="max-w-2xl mx-auto">

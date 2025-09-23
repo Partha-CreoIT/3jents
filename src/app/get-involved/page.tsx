@@ -21,14 +21,14 @@ export default function GetInvolved() {
       />
       <div className="relative z-10">
       {/* Hero Section */}
-      <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
             Get Involved
           </h1>
           <p className="text-xl md:text-2xl text-grey-light leading-relaxed">
             Join our creative community and be part of something extraordinary.
-            Whether you're an artist, collaborator, or supporter, there's a place for you here.
+            Whether you&apos;re an artist, collaborator, or supporter, there&apos;s a place for you here.
           </p>
         </div>
       </SectionWrapper>
@@ -105,7 +105,7 @@ export default function GetInvolved() {
       </SectionWrapper>
 
       {/* Ways to Support */}
-      <SectionWrapper className="bg-black/80">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
@@ -113,7 +113,7 @@ export default function GetInvolved() {
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto">
               There are many ways to support our mission and be part of our creative community,
-              even if you're not ready to join as a full member.
+              even if you&apos;re not ready to join as a full member.
             </p>
           </div>
 
@@ -193,11 +193,11 @@ export default function GetInvolved() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
-              Questions? Let's Talk
+              Questions? Let&apos;s Talk
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto">
               Not sure which path is right for you? We'd love to chat about your interests

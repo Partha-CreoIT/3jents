@@ -3,7 +3,6 @@
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import ServiceCard from '@/components/cards/ServiceCard';
 import ContactForm from '@/components/forms/ContactForm';
-import LightRays from '@/components/LightRays';
 import { Film, Users, Music, Camera, Mic, Settings } from 'lucide-react';
 
 // Service data based on requirements
@@ -85,39 +84,28 @@ const services = [
 
 export default function ProductionServices() {
   return (
-    <div className="min-h-screen relative">
-      <LightRays
-        raysOrigin="right"
-        raysColor="#FFD700"
-        raysSpeed={0.6}
-        lightSpread={1.3}
-        rayLength={1.4}
-        followMouse={true}
-        mouseInfluence={0.35}
-        className="absolute inset-0"
-      />
-      <div className="relative z-10">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md pt-32 md:pt-40 pb-24 md:pb-32">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-8">
             Production Services
           </h1>
           <p className="text-xl md:text-2xl text-grey-light leading-relaxed">
             Comprehensive film production services to bring your creative vision to life.
-            From concept to completion, we've got you covered.
+            From concept to completion, we&apos;ve got you covered.
           </p>
         </div>
       </SectionWrapper>
 
       {/* Services Grid */}
-      <SectionWrapper className="bg-black/90">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               What We Offer
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               Professional services tailored to meet the unique needs of your project,
               delivered by experienced filmmakers and industry professionals.
             </p>
@@ -138,18 +126,18 @@ export default function ProductionServices() {
       </SectionWrapper>
 
       {/* Process Section */}
-      <SectionWrapper className="bg-black/80">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+      <SectionWrapper className="bg-gradient-to-br from-white/15 via-gold/8 to-white/25 backdrop-blur-md py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Our Process
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               A streamlined approach that ensures your project is delivered on time,
               on budget, and exceeds expectations.
             </p>
           </div>
-          <div className="space-y-8">
+          <div className="space-y-12">
             {[
               {
                 step: '01',
@@ -172,15 +160,15 @@ export default function ProductionServices() {
                 description: 'Expert editing, color grading, sound design, and finishing touches to deliver a polished final product.',
               },
             ].map((phase) => (
-              <div key={phase.step} className="flex flex-col md:flex-row items-start md:items-center space-y-4 md:space-y-0 md:space-x-8">
+              <div key={phase.step} className="flex flex-col md:flex-row items-start md:items-center space-y-6 md:space-y-0 md:space-x-10">
                 <div className="flex-shrink-0">
-                  <div className="w-16 h-16 bg-gold rounded-full flex items-center justify-center">
+                  <div className="w-20 h-20 bg-gold rounded-full flex items-center justify-center">
                     <span className="text-black font-bold text-xl">{phase.step}</span>
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-xl font-semibold text-gold mb-2">{phase.title}</h3>
-                  <p className="text-grey-light leading-relaxed">{phase.description}</p>
+                  <h3 className="text-xl md:text-2xl font-semibold text-gold mb-4">{phase.title}</h3>
+                  <p className="text-grey-light leading-relaxed text-lg">{phase.description}</p>
                 </div>
               </div>
             ))}
@@ -189,14 +177,14 @@ export default function ProductionServices() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Ready to Start Your Project?
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
-              Let's discuss your vision and how our production services can help bring it to life.
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
+              Let&apos;s discuss your vision and how our production services can help bring it to life.
               Get in touch for a free consultation and quote.
             </p>
           </div>
@@ -205,7 +193,6 @@ export default function ProductionServices() {
           </div>
         </div>
       </SectionWrapper>
-      </div>
     </div>
   );
 }

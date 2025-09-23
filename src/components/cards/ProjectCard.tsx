@@ -24,8 +24,8 @@ export default function ProjectCard({
   websiteUrl,
 }: ProjectCardProps) {
   return (
-    <Card className="bg-black/50 border-gold/20 overflow-hidden hover:border-gold/40 hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 group">
-      <div className="relative h-80 w-full overflow-hidden">
+    <Card className="bg-black/50 border-gold/20 overflow-hidden hover:border-gold/40 hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 group py-0">
+      <div className="relative h-[32rem] md:h-[36rem] w-full overflow-hidden rounded-t-xl">
         <Image
           src={posterUrl}
           alt={title}
@@ -35,14 +35,14 @@ export default function ProjectCard({
         />
         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
       </div>
-      <CardContent className="p-6">
-        <div className="space-y-4">
+      <CardContent className="p-6 md:p-8">
+        <div className="space-y-4 md:space-y-6">
           <div>
-            <h3 className="text-xl font-semibold text-gold">{title}</h3>
-            <p className="text-white font-medium">{type}</p>
+            <h3 className="text-xl md:text-2xl font-semibold text-gold">{title}</h3>
+            <p className="text-white font-medium text-base md:text-lg">{type}</p>
           </div>
 
-          <p className="text-grey-light text-sm leading-relaxed">{bio}</p>
+          <p className="text-grey-light text-sm md:text-base leading-relaxed">{bio}</p>
 
           <div>
             <div className="flex items-center space-x-1 mb-2">

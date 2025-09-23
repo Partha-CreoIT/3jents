@@ -3,7 +3,6 @@
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import TeamCard from '@/components/cards/TeamCard';
 import ContactForm from '@/components/forms/ContactForm';
-import LightRays from '@/components/LightRays';
 
 const founders = [
   {
@@ -16,13 +15,13 @@ const founders = [
     name: 'Nick Bella',
     role: 'Co-Founder & Producer',
     bio: 'Dynamic producer and creative force behind 3JENTS, orchestrating seamless productions from concept to completion. Expert in managing complex projects while maintaining artistic integrity and fostering collaborative environments.',
-    imageUrl: '/founder/founder_1.png',
+    imageUrl: '/founder_1.png',
   },
   {
     name: 'Vish Ishaan',
     role: 'Co-Founder & Technical Director',
     bio: 'Technical virtuoso and innovative director bridging theater and film through cutting-edge production techniques. Master of visual storytelling, specializing in immersive experiences that push creative boundaries.',
-    imageUrl: '/founder/founder_2.png',
+    imageUrl: '/founder_2.png',
   },
 ];
 
@@ -69,22 +68,11 @@ const houseEmployees = {
 
 export default function AboutUs() {
   return (
-    <div className="min-h-screen relative">
-      <LightRays
-        raysOrigin="top-center"
-        raysColor="#FFD700"
-        raysSpeed={0.5}
-        lightSpread={2}
-        rayLength={1.5}
-        followMouse={true}
-        mouseInfluence={0.3}
-        className="absolute inset-0"
-      />
-      <div className="relative z-10">
+    <div className="min-h-screen">
       {/* Hero Section */}
-      <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md pt-32 md:pt-40 pb-24 md:pb-32">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <h1 className="text-4xl md:text-6xl font-bold text-gold mb-8">
             About 3JE Productions
           </h1>
           <p className="text-xl md:text-2xl text-grey-light leading-relaxed">
@@ -95,27 +83,27 @@ export default function AboutUs() {
       </SectionWrapper>
 
       {/* Mission Statement */}
-      <SectionWrapper className="bg-black/90">
-        <div className="max-w-4xl mx-auto">
-          <div className="bg-black/60 rounded-lg p-8 md:p-12 border border-gold/20">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6 text-center">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="bg-black/60 rounded-lg p-10 md:p-16 border border-gold/20">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-10 text-center">
               Our Mission
             </h2>
-            <div className="space-y-6 text-grey-light leading-relaxed">
-              <p className="text-lg">
+            <div className="space-y-8 text-grey-light leading-relaxed">
+              <p className="text-lg md:text-xl">
                 Founded in 2020, 3JE Productions emerged from a shared vision to amplify
                 underrepresented voices and create content that challenges conventional
                 narratives. What started as a small collaboration between friends has
                 evolved into a thriving creative hub that supports artists, filmmakers,
                 and storytellers from diverse backgrounds.
               </p>
-              <p className="text-lg">
+              <p className="text-lg md:text-xl">
                 Our name, 3JE, represents the three founding members and our commitment
                 to authenticity (J), excellence (E), and innovation in everything we create.
                 We believe that great storytelling has the power to inspire change,
                 foster understanding, and build communities.
               </p>
-              <p className="text-lg">
+              <p className="text-lg md:text-xl">
                 Today, we continue to push boundaries through our work in film production,
                 music videos, photography, and emerging media formats. We pride ourselves
                 on creating safe, inclusive spaces where creativity can flourish and
@@ -127,28 +115,25 @@ export default function AboutUs() {
       </SectionWrapper>
 
       {/* Founders Section */}
-      <SectionWrapper className="bg-black/80">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+      <SectionWrapper className="bg-gradient-to-br from-white/15 via-gold/8 to-white/25 backdrop-blur-md py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Meet Our Founders
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               The visionaries behind 3JE Productions, bringing together their unique
               talents and experiences to create something truly special.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
             {founders.map((founder) => (
               <TeamCard
                 key={founder.name}
                 name={founder.name}
-                pronouns={founder.pronouns}
                 role={founder.role}
                 bio={founder.bio}
                 imageUrl={founder.imageUrl}
-                instagramUrl={founder.instagramUrl}
-                websiteUrl={founder.websiteUrl}
               />
             ))}
           </div>
@@ -156,29 +141,25 @@ export default function AboutUs() {
       </SectionWrapper>
 
       {/* Freelancers Section */}
-      <SectionWrapper className="bg-black/90">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+      <SectionWrapper className="bg-gradient-to-br from-black/25 via-gold/12 to-black/35 backdrop-blur-md py-24 md:py-32">
+        <div className="max-w-7xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Our Creative Network
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               A talented community of freelancers, artists, and specialists who bring
               their unique expertise to our productions.
             </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {freelancers.map((freelancer) => (
               <TeamCard
                 key={freelancer.name}
                 name={freelancer.name}
-                pronouns={freelancer.pronouns}
                 role={freelancer.role}
                 bio={freelancer.bio}
-                imageUrl={freelancer.imageUrl}
                 trades={freelancer.trades}
-                instagramUrl={freelancer.instagramUrl}
-                websiteUrl={freelancer.websiteUrl}
               />
             ))}
           </div>
@@ -186,21 +167,21 @@ export default function AboutUs() {
       </SectionWrapper>
 
       {/* House Employees Section */}
-      <SectionWrapper>
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+      <SectionWrapper className="py-24 md:py-32">
+        <div className="max-w-5xl mx-auto px-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Our House Team
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               The dedicated professionals who form the core of our operations and drive our vision forward.
             </p>
           </div>
-          <div className="bg-black/60 rounded-lg p-8 md:p-12 border border-gold/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+          <div className="bg-black/60 rounded-lg p-10 md:p-16 border border-gold/20">
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
               <div>
-                <h3 className="text-xl font-semibold text-gold mb-4">Leadership</h3>
-                <div className="space-y-3 text-grey-light">
+                <h3 className="text-xl font-semibold text-gold mb-6">Leadership</h3>
+                <div className="space-y-4 text-grey-light">
                   <div>
                     <span className="font-medium text-white">Founders:</span> {houseEmployees.founders.join(', ')}
                   </div>
@@ -213,8 +194,8 @@ export default function AboutUs() {
                 </div>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gold mb-4">Creative & Operations</h3>
-                <div className="space-y-3 text-grey-light">
+                <h3 className="text-xl font-semibold text-gold mb-6">Creative & Operations</h3>
+                <div className="space-y-4 text-grey-light">
                   <div>
                     <span className="font-medium text-white">Photographers:</span> {houseEmployees.photographers.join(', ')}
                   </div>
@@ -229,13 +210,13 @@ export default function AboutUs() {
       </SectionWrapper>
 
       {/* Contact Section */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
               Join Our Creative Community
             </h2>
-            <p className="text-grey-light max-w-2xl mx-auto">
+            <p className="text-grey-light max-w-2xl mx-auto text-lg">
               Interested in collaborating or learning more about our work?
               We'd love to hear from you.
             </p>
@@ -245,7 +226,6 @@ export default function AboutUs() {
           </div>
         </div>
       </SectionWrapper>
-      </div>
     </div>
   );
 }

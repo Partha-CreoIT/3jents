@@ -25,26 +25,27 @@ export default function TeamCard({
   trades = []
 }: TeamCardProps) {
   return (
-    <Card className="bg-black/50 border-gold/20 overflow-hidden hover:border-gold/40 transition-colors">
+    <Card className="bg-black/50 border-gold/20 overflow-hidden hover:border-gold/40 hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 group py-0">
       {imageUrl && (
-        <div className="relative h-64 w-full overflow-hidden">
+        <div className="relative h-[32rem] md:h-[36rem] w-full overflow-hidden rounded-t-xl">
           <Image
             src={imageUrl}
             alt={name}
             fill
-            className="object-cover object-top"
+            className="object-cover object-center group-hover:scale-105 transition-transform duration-500"
             sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
           />
+          <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
         </div>
       )}
-      <CardContent className={imageUrl ? "p-6" : "p-6 pt-8"}>
-        <div className="space-y-4">
+      <CardContent className={imageUrl ? "p-6 md:p-8" : "p-6 md:p-8 pt-8"}>
+        <div className="space-y-4 md:space-y-6">
           <div>
-            <h3 className="text-xl font-semibold text-gold">{name}</h3>
+            <h3 className="text-xl md:text-2xl font-semibold text-gold">{name}</h3>
             {pronouns && (
               <p className="text-sm text-grey-light">{pronouns}</p>
             )}
-            <p className="text-white font-medium">{role}</p>
+            <p className="text-white font-medium text-base md:text-lg">{role}</p>
           </div>
 
           {trades.length > 0 && (
@@ -63,7 +64,7 @@ export default function TeamCard({
             </div>
           )}
 
-          <p className="text-grey-light text-sm leading-relaxed">{bio}</p>
+          <p className="text-grey-light text-sm md:text-base leading-relaxed">{bio}</p>
 
           {websiteUrl && (
             <div className="flex space-x-2">

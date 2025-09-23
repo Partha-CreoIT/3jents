@@ -73,7 +73,7 @@ export default function Photography() {
       />
       <div className="relative z-10">
       {/* Hero Section */}
-      <SectionWrapper className="bg-gradient-to-b from-black via-grey-dark to-black">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-4xl mx-auto text-center">
           <h1 className="text-4xl md:text-6xl font-bold text-gold mb-6">
             Photography Services
@@ -108,7 +108,7 @@ export default function Photography() {
       </SectionWrapper>
 
       {/* Services */}
-      <SectionWrapper className="bg-black/80">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
@@ -193,14 +193,14 @@ export default function Photography() {
       </SectionWrapper>
 
       {/* Booking CTA */}
-      <SectionWrapper className="bg-gradient-to-b from-transparent to-black/50">
+      <SectionWrapper className="bg-gradient-to-br from-white/10 via-gold/5 to-white/20 backdrop-blur-md">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gold mb-6">
             Ready to Book a Session?
           </h2>
           <p className="text-grey-light text-lg mb-8 max-w-2xl mx-auto">
             Whether you need theater photography, concert coverage, professional headshots,
-            or event documentation, we're here to capture your story beautifully.
+            or event documentation, we&apos;re here to capture your story beautifully.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
             <Button

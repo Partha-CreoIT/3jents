@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import LightRays from "@/components/LightRays";
+import BackgroundWrapper from "@/components/BackgroundWrapper";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -51,30 +52,13 @@ export default function RootLayout({
       <body
         className={`${playfairDisplay.variable} ${inter.variable} ${oswald.variable} antialiased text-white min-h-screen relative`}
       >
-        {/* LightRays Background */}
-        <div className="fixed inset-0 z-0">
-          <LightRays
-            raysOrigin="top-center"
-            raysColor="#1a1a1a"
-            raysSpeed={0.3}
-            lightSpread={1.2}
-            rayLength={1.5}
-            pulsating={true}
-            fadeDistance={0.6}
-            saturation={0.3}
-            followMouse={true}
-            mouseInfluence={0.03}
-          />
-        </div>
-
-        {/* Content */}
-        <div className="relative z-10">
+        <BackgroundWrapper>
           <Header />
-          <main className="pt-24">
+          <main>
             {children}
           </main>
           <Footer />
-        </div>
+        </BackgroundWrapper>
       </body>
     </html>
   );
