@@ -16,11 +16,8 @@ export default function Footer() {
                 height={80}
                 className="h-20 w-auto"
               />
-              <Link href="/" className="text-2xl font-bold text-gold hover:text-gold-light transition-colors font-heading">
-                3 Jokers Entertainment
-              </Link>
             </div>
-            <div className="space-y-4">
+            <div className="space-y-4 pl-4 md:pl-3">
               <h3 className="text-lg font-semibold text-white font-heading">About Us</h3>
               <p className="text-grey-light max-w-md font-body">
                 A dynamic theater and film collective creating compelling stories through
@@ -30,7 +27,7 @@ export default function Footer() {
           </div>
 
           {/* Right Side - Follow Us Only */}
-          <div className="space-y-6">
+          <div className="space-y-6 pl-4 md:pl-90">
             {/* Social Media Links with Logos */}
             <div className="flex flex-col space-y-4">
               <h3 className="text-lg font-semibold text-white font-heading">Follow Us</h3>

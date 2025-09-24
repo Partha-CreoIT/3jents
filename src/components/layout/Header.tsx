@@ -5,12 +5,13 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Button } from '@/components/ui/button';
+import { useScrollHighlight } from '@/hooks/useScrollHighlight';
 
 const navigation = [
-  { name: 'Home', href: '/' },
-  { name: 'Our Story', href: '/about' },
-  { name: 'Past Work', href: '/past-work' },
-  { name: 'Services', href: '/services' },
+  { name: 'Home', href: '/', sectionId: 'home' },
+  { name: 'Past Work', href: '/#work', sectionId: 'work' },
+  { name: 'Our Story', href: '/#about', sectionId: 'about' },
+  { name: 'Services', href: '/#services', sectionId: 'services' },
 ];
 
 const socialLinks = [
@@ -22,6 +23,7 @@ const socialLinks = [
 export default function Header() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const activeSection = useScrollHighlight();
 
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -29,6 +31,20 @@ export default function Header() {
 
   const closeMobileMenu = () => {
     setIsMobileMenuOpen(false);
+  };
+
+  const handleNavClick = (sectionId: string | null) => {
+    if (sectionId) {
+      if (sectionId === 'home') {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } else {
+        const element = document.getElementById(sectionId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth' });
+        }
+      }
+    }
+    closeMobileMenu();
   };
 
   return (
@@ -50,17 +66,31 @@ export default function Header() {
         {/* Navigation */}
         <nav className="hidden lg:flex space-x-6 xl:space-x-8">
           {navigation.map((item) => (
-            <Link
-              key={item.name}
-              href={item.href}
-              className={`transition-colors font-medium text-sm ${
-                pathname === item.href
-                  ? 'text-gold'
-                  : 'text-white hover:text-gold'
-              }`}
-            >
-              {item.name}
-            </Link>
+            item.sectionId ? (
+              <button
+                key={item.name}
+                onClick={() => handleNavClick(item.sectionId)}
+                className={`transition-colors font-medium text-sm ${
+                  activeSection === item.sectionId
+                    ? 'text-gold'
+                    : 'text-white hover:text-gold'
+                }`}
+              >
+                {item.name}
+              </button>
+            ) : (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`transition-colors font-medium text-sm ${
+                  pathname === item.href
+                    ? 'text-gold'
+                    : 'text-white hover:text-gold'
+                }`}
+              >
+                {item.name}
+              </Link>
+            )
           ))}
         </nav>
 
@@ -122,18 +152,32 @@ export default function Header() {
             {/* Navigation Links */}
             <nav className="space-y-4 mb-6">
               {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  href={item.href}
-                  onClick={closeMobileMenu}
-                  className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${
-                    pathname === item.href
-                      ? 'text-gold bg-gold/10'
-                      : 'text-white hover:text-gold hover:bg-gold/10'
-                  }`}
-                >
-                  {item.name}
-                </Link>
+                item.sectionId ? (
+                  <button
+                    key={item.name}
+                    onClick={() => handleNavClick(item.sectionId)}
+                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors w-full text-left ${
+                      activeSection === item.sectionId
+                        ? 'text-gold bg-gold/10'
+                        : 'text-white hover:text-gold hover:bg-gold/10'
+                    }`}
+                  >
+                    {item.name}
+                  </button>
+                ) : (
+                  <Link
+                    key={item.name}
+                    href={item.href}
+                    onClick={closeMobileMenu}
+                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${
+                      pathname === item.href
+                        ? 'text-gold bg-gold/10'
+                        : 'text-white hover:text-gold hover:bg-gold/10'
+                    }`}
+                  >
+                    {item.name}
+                  </Link>
+                )
               ))}
             </nav>
             

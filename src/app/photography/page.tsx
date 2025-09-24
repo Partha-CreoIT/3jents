@@ -215,7 +215,7 @@ export default function Photography() {
             <Button
               variant="outline"
               size="lg"
-              className="border-gold text-gold hover:bg-gold hover:text-black font-semibold px-8 py-3"
+              className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3"
             >
               View Full Portfolio
             </Button>
