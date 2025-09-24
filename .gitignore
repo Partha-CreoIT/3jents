@@ -41,10 +41,4 @@ yarn-error.log*
 next-env.d.ts
 
 # Large media files (use Git LFS if needed)
-public/**/*.mp4
-public/**/*.mov
-public/**/*.avi
-public/**/*.png
-public/**/*.jpeg
-public/**/*.jpg
-public/**/*.gif
+
