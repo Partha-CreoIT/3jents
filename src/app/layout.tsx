@@ -3,7 +3,6 @@ import { Playfair_Display, Inter, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
-import LightRays from "@/components/LightRays";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
 
 const playfairDisplay = Playfair_Display({

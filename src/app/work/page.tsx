@@ -2,9 +2,7 @@
 
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import ProjectCard from '@/components/cards/ProjectCard';
-import Carousel from '@/components/sections/Carousel';
 import ContactForm from '@/components/forms/ContactForm';
-import LightRays from '@/components/LightRays';
 
 // Featured projects with actual poster images - theater & film collective
 const projects = [
@@ -180,7 +178,7 @@ export default function PastWork() {
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto">
               Have a project in mind or want to discuss collaboration opportunities?
-              We'd love to hear your ideas and explore how we can work together.
+              We&apos;d love to hear your ideas and explore how we can work together.
             </p>
           </div>
           <div className="max-w-2xl mx-auto">

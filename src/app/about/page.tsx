@@ -218,7 +218,7 @@ export default function AboutUs() {
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto text-lg">
               Interested in collaborating or learning more about our work?
-              We'd love to hear from you.
+              We&apos;d love to hear from you.
             </p>
           </div>
           <div className="max-w-2xl mx-auto">

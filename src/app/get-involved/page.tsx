@@ -81,7 +81,7 @@ export default function GetInvolved() {
               </div>
               <h3 className="text-2xl font-bold text-gold mb-4">New Works Submission</h3>
               <p className="text-grey-light mb-6 leading-relaxed">
-                Have a project idea or script you'd like to develop with us?
+                Have a project idea or script you&apos;d like to develop with us?
                 Submit your creative concepts for consideration and collaboration.
               </p>
               <Button
@@ -200,7 +200,7 @@ export default function GetInvolved() {
               Questions? Let&apos;s Talk
             </h2>
             <p className="text-grey-light max-w-2xl mx-auto">
-              Not sure which path is right for you? We'd love to chat about your interests
+              Not sure which path is right for you? We&apos;d love to chat about your interests
               and help you find the best way to get involved with 3JE Productions.
             </p>
           </div>
