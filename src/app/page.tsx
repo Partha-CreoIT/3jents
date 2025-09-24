@@ -194,7 +194,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Featured Projects */}
-      <SectionWrapper className="py-24 md:py-32">
+      <SectionWrapper className="bg-gradient-to-br from-black/20 via-gold/18 to-black/40 backdrop-blur-md py-24 md:py-32">
         <div className="max-w-7xl mx-auto px-4">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gold mb-6">
