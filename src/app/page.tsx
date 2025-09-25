@@ -105,10 +105,6 @@ const contactInfo = {
 };
 
 export default function Home() {
-  const videoRef = useRef<HTMLVideoElement>(null);
-  const [videoError, setVideoError] = useState(false);
-  const [videoLoaded, setVideoLoaded] = useState(false);
-
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -119,85 +115,25 @@ export default function Home() {
     }
   };
 
-  const handleVideoError = () => {
-    console.warn('Video failed to load, using fallback');
-    setVideoError(true);
-  };
-
-  const handleVideoLoad = () => {
-    console.log('Video loaded successfully');
-    setVideoLoaded(true);
-  };
-
-  // Try to play video on mount (for browsers that allow it)
-  useEffect(() => {
-    const timer = setTimeout(() => {
-      if (videoRef.current && !videoLoaded) {
-        videoRef.current.play().catch(() => {
-          // Autoplay failed, video will show fallback background
-          console.log('Autoplay failed, showing fallback background');
-        });
-      }
-    }, 100);
-
-    return () => clearTimeout(timer);
-  }, [videoLoaded]);
-
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
-        {!videoError ? (
-          <video
-            ref={videoRef}
-            autoPlay
-            muted
-            loop
-            playsInline
-            preload="metadata"
-            onError={handleVideoError}
-            onLoadedData={handleVideoLoad}
-            onCanPlayThrough={() => {
-              console.log('Video can play through');
-              setVideoLoaded(true);
-            }}
-            onLoadStart={() => {
-              console.log('Video load started');
-            }}
-            onStalled={() => {
-              console.warn('Video stalled');
-            }}
-            onSuspend={() => {
-              console.log('Video suspended');
-            }}
-            className="absolute inset-0 w-full h-full object-cover z-0"
-            style={{
-              // Prevent interaction with video background
-              pointerEvents: 'none',
-              // Ensure video covers entire area on mobile
-              minWidth: '100%',
-              minHeight: '100%'
-            }}
-            // Additional mobile-friendly attributes
-            disablePictureInPicture
-            controls={false}
-            webkit-playsinline="true"
-            x5-playsinline="true"
-            x-webkit-airplay="allow"
-          >
-            {/* Primary MP4 source - local file for better reliability */}
-            <source
-              src="/promo.mp4"
-              type="video/mp4"
-            />
-            {/* Fallback for browsers that don't support the video */}
-            Your browser does not support the video tag.
-          </video>
-        ) : (
-          // Fallback background when video fails to load
-          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-black z-0" />
-        )}
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            pointerEvents: 'none',
+            minWidth: '100%',
+            minHeight: '100%'
+          }}
+        >
+          <source src="/video/video.mp4" type="video/mp4" />
+        </video>
 
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
