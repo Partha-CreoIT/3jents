@@ -1,5 +1,6 @@
 'use client';
 
+import { useState, useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
@@ -30,7 +31,7 @@ const projects = [
   {
     title: 'Slaps',
     type: 'Comedy Sketch',
-    posterUrl: '/pastwork/slaps.PNG',
+    posterUrl: '/pastwork/slaps.jpeg',
     bio: 'A hilarious comedy sketch series that takes absurd situations and turns them into laugh-out-loud moments. Quick, witty, and perfectly timed for maximum comedic impact.',
     credits: ['Writer', 'Director', 'Actors', 'Cinematographer', 'Editor'],
     youtubeUrl: 'https://youtube.com/watch?v=example3',
@@ -99,21 +100,105 @@ const houseEmployees = {
   producers: ['Patrice Yip', 'Nick Bella'],
 };
 
+const contactInfo = {
+  email: 'network@3jents.com',
+};
+
 export default function Home() {
+  const videoRef = useRef<HTMLVideoElement>(null);
+  const [videoError, setVideoError] = useState(false);
+  const [videoLoaded, setVideoLoaded] = useState(false);
+
+  const copyToClipboard = async (text: string) => {
+    try {
+      await navigator.clipboard.writeText(text);
+      // Could add a toast notification here
+      console.log('Copied to clipboard:', text);
+    } catch (err) {
+      console.error('Failed to copy:', err);
+    }
+  };
+
+  const handleVideoError = () => {
+    console.warn('Video failed to load, using fallback');
+    setVideoError(true);
+  };
+
+  const handleVideoLoad = () => {
+    console.log('Video loaded successfully');
+    setVideoLoaded(true);
+  };
+
+  // Try to play video on mount (for browsers that allow it)
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (videoRef.current && !videoLoaded) {
+        videoRef.current.play().catch(() => {
+          // Autoplay failed, video will show fallback background
+          console.log('Autoplay failed, showing fallback background');
+        });
+      }
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, [videoLoaded]);
+
   return (
     <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         {/* Video Background */}
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          className="absolute inset-0 w-full h-full object-cover z-0"
-        >
-          <source src="https://minio-4.creox.dev/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3B1YmxpY3N0b3JhZ2UvQnJvb2tseW4lMjBCYWJ5JTIwUHJvbW8lMjAtJTIwTmljayUyMEJlbGxhJTIwXyUyMERCSUcubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9VkU0RFhHT1pNV1hLMkpYN1hHWU0lMkYyMDI1MDkyNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MjVUMTAyNzE0WiZYLUFtei1FeHBpcmVzPTQzMjAwJlgtQW16LVNlY3VyaXR5LVRva2VuPWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoWTJObGMzTkxaWGtpT2lKV1JUUkVXRWRQV2sxWFdFc3lTbGczV0VkWlRTSXNJbVY0Y0NJNk1UYzFPRGd6T0RJM05Td2ljR0Z5Wlc1MElqb2liV2x1YVc5aFpHMXBiaUo5LlRpSnFhTUdWWVB6ZWQ4bWtabFpGWEN1M09ZeHhNaUJyNTJqejFiQS12WXk3V002Wl9FYnlQQmpERnk4QVhiWnhFVS01SzlKQ3N2TUJZcWx0dldqQlVBJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZ2ZXJzaW9uSWQ9bnVsbCZYLUFtei1TaWduYXR1cmU9MzEzZThlNWNiOWZhYzIyYTBjZTc3MmRmOTJmM2NlMWQxNjM0ZDRkODljMDBhYjNkODFlMTk2OTU4YmU4MTdmOA" type="video/mp4" />
-        </video>
+        {!videoError ? (
+          <video
+            ref={videoRef}
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="metadata"
+            onError={handleVideoError}
+            onLoadedData={handleVideoLoad}
+            onCanPlayThrough={() => {
+              console.log('Video can play through');
+              setVideoLoaded(true);
+            }}
+            onLoadStart={() => {
+              console.log('Video load started');
+            }}
+            onStalled={() => {
+              console.warn('Video stalled');
+            }}
+            onSuspend={() => {
+              console.log('Video suspended');
+            }}
+            className="absolute inset-0 w-full h-full object-cover z-0"
+            style={{
+              // Prevent interaction with video background
+              pointerEvents: 'none',
+              // Ensure video covers entire area on mobile
+              minWidth: '100%',
+              minHeight: '100%'
+            }}
+            // Additional mobile-friendly attributes
+            disablePictureInPicture
+            controls={false}
+            webkit-playsinline="true"
+            x5-playsinline="true"
+            x-webkit-airplay="allow"
+          >
+            {/* Primary MP4 source - local file for better reliability */}
+            <source
+              src="/promo.mp4"
+              type="video/mp4"
+            />
+            {/* Fallback for browsers that don't support the video */}
+            Your browser does not support the video tag.
+          </video>
+        ) : (
+          // Fallback background when video fails to load
+          <div className="absolute inset-0 w-full h-full bg-gradient-to-br from-black via-gray-900 to-black z-0" />
+        )}
+
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
           <motion.div
@@ -164,7 +249,7 @@ export default function Home() {
               >
                   Explore Our Work
               </Button>
-              <ContactDialog>
+              <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
               <Button
                 variant="outline"
                 size="lg"
@@ -327,14 +412,14 @@ export default function Home() {
               their unique expertise to our productions.
             </p>
             <div className="mt-8">
-              <ContactDialog>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
-                >
-                  Join Our Network
-                </Button>
+              <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
+              <Button
+                variant="outline"
+                size="lg"
+                className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
+              >
+                Join Our Network
+              </Button>
               </ContactDialog>
             </div>
           </div>
@@ -459,7 +544,7 @@ export default function Home() {
           </div>
 
           <div className="text-center">
-            <ContactDialog>
+            <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
               <Button
                 variant="outline"
                 size="lg"
@@ -483,7 +568,7 @@ export default function Home() {
               The dedicated professionals who form the core of our operations and drive our vision forward.
             </p>
             <div className="mt-8">
-              <ContactDialog>
+              <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
                 <Button
                   variant="outline"
                   size="lg"

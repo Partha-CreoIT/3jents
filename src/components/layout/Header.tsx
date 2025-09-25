@@ -138,25 +138,30 @@ export default function Header() {
       </div>
       </header>
 
-      {/* Mobile Menu Panel */}
+      {/* Mobile Menu Bottom Sheet */}
       {isMobileMenuOpen && (
         <div className="fixed inset-0 z-40 lg:hidden">
           {/* Backdrop */}
-          <div 
+          <div
             className="fixed inset-0 bg-black/50 backdrop-blur-sm"
             onClick={closeMobileMenu}
           />
-          
-          {/* Menu Panel */}
-          <div className="fixed top-20 left-1/2 transform -translate-x-1/2 w-[90%] max-w-sm bg-black/90 backdrop-blur-xl border border-gold/20 rounded-2xl p-6 shadow-2xl">
+
+          {/* Bottom Sheet */}
+          <div className="fixed bottom-0 left-0 right-0 bg-black/90 backdrop-blur-xl border-t border-gold/20 rounded-t-xl shadow-2xl transform transition-transform duration-300 ease-out">
+            {/* Handle */}
+            <div className="flex justify-center pt-4 pb-2">
+              <div className="w-12 h-1.5 bg-gold/30 rounded-full"></div>
+            </div>
+
             {/* Navigation Links */}
-            <nav className="space-y-4 mb-6">
+            <nav className="px-6 pb-6 space-y-2">
               {navigation.map((item) => (
                 item.sectionId ? (
                   <button
                     key={item.name}
                     onClick={() => handleNavClick(item.sectionId)}
-                    className={`cursor-pointer block py-3 px-4 rounded-lg text-lg font-medium transition-colors w-full text-left ${
+                    className={`cursor-pointer block py-4 px-4 rounded-lg text-lg font-medium transition-colors w-full text-left ${
                       activeSection === item.sectionId
                         ? 'text-gold bg-gold/10'
                         : 'text-white hover:text-gold hover:bg-gold/10'
@@ -169,7 +174,7 @@ export default function Header() {
                     key={item.name}
                     href={item.href}
                     onClick={closeMobileMenu}
-                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors ${
+                    className={`block py-4 px-4 rounded-lg text-lg font-medium transition-colors ${
                       pathname === item.href
                         ? 'text-gold bg-gold/10'
                         : 'text-white hover:text-gold hover:bg-gold/10'
@@ -180,10 +185,10 @@ export default function Header() {
                 )
               ))}
             </nav>
-            
+
             {/* Social Links */}
-            <div className="pt-4 border-t border-gold/20">
-              <p className="text-grey-light text-sm mb-3">Follow us</p>
+            <div className="px-6 pb-6 pt-4 border-t border-gold/20">
+              <p className="text-grey-light text-sm mb-4">Follow us</p>
               <div className="flex justify-center space-x-4">
                 {socialLinks.map((social) => (
                   <Button
@@ -191,7 +196,7 @@ export default function Header() {
                     variant="ghost"
                     size="icon"
                     asChild
-                    className="hover:bg-gold/10 rounded-full h-10 w-10 p-2"
+                    className="hover:bg-gold/10 rounded-full h-12 w-12 p-3"
                   >
                     <a
                       href={social.href}

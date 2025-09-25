@@ -1,14 +1,23 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { createPortal } from 'react-dom';
 import ContactForm from './ContactForm';
 
 interface ContactDialogProps {
   children: React.ReactNode;
+  onClick?: () => void;
+  title?: string;
 }
 
-export default function ContactDialog({ children }: ContactDialogProps) {
+export default function ContactDialog({ children, onClick, title = "Get In Touch" }: ContactDialogProps) {
   const [open, setOpen] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  // Set mounted state
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   // Prevent body scroll when modal is open
   useEffect(() => {
@@ -24,22 +33,43 @@ export default function ContactDialog({ children }: ContactDialogProps) {
     };
   }, [open]);
 
+  const handleClick = () => {
+    console.log('ContactDialog clicked, opening dialog...');
+    onClick?.();
+    setOpen(true);
+  };
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    e.preventDefault();
+    handleClick();
+  };
+
+  const handleMouseClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    handleClick();
+  };
+
   return (
     <>
-      <div onClick={() => setOpen(true)}>
+      <div 
+        onClick={handleMouseClick}
+        onTouchEnd={handleTouchEnd}
+        className="cursor-pointer"
+        style={{ WebkitTapHighlightColor: 'transparent' }}
+      >
         {children}
       </div>
 
-      {open && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center">
+      {mounted && open && createPortal(
+        <div key="contact-dialog" className="fixed inset-0 z-[9999] flex items-center justify-center">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm z-[9998]"
             onClick={() => setOpen(false)}
           />
 
           {/* Modal Content */}
-          <div className="relative bg-black/95 border border-gold/20 rounded-lg p-6 w-full max-w-md mx-4 backdrop-blur-xl shadow-2xl">
+          <div className="relative bg-black/95 border border-gold/20 rounded-lg p-6 w-full max-w-md mx-4 backdrop-blur-xl shadow-2xl z-[9999]">
             {/* Close Button */}
             <button
               onClick={() => setOpen(false)}
@@ -53,14 +83,15 @@ export default function ContactDialog({ children }: ContactDialogProps) {
             {/* Title */}
             <div className="text-center mb-6">
               <h2 className="text-2xl font-bold text-gold">
-                Get In Touch
+                {title}
               </h2>
             </div>
 
             {/* Contact Form */}
             <ContactForm />
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );
