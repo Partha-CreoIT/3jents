@@ -123,7 +123,7 @@ export default function Carousel({
           {items.map((_, index) => (
             <button
               key={index}
-              className={`w-3 h-3 rounded-full transition-colors ${
+              className={`cursor-pointer w-3 h-3 rounded-full transition-colors ${
                 index === currentIndex
                   ? 'bg-gold'
                   : 'bg-white/50 hover:bg-white/75'

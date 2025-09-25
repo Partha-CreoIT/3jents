@@ -70,7 +70,7 @@ export default function Header() {
               <button
                 key={item.name}
                 onClick={() => handleNavClick(item.sectionId)}
-                className={`transition-colors font-medium text-sm ${
+                className={`cursor-pointer transition-colors font-medium text-sm ${
                   activeSection === item.sectionId
                     ? 'text-gold'
                     : 'text-white hover:text-gold'
@@ -156,7 +156,7 @@ export default function Header() {
                   <button
                     key={item.name}
                     onClick={() => handleNavClick(item.sectionId)}
-                    className={`block py-3 px-4 rounded-lg text-lg font-medium transition-colors w-full text-left ${
+                    className={`cursor-pointer block py-3 px-4 rounded-lg text-lg font-medium transition-colors w-full text-left ${
                       activeSection === item.sectionId
                         ? 'text-gold bg-gold/10'
                         : 'text-white hover:text-gold hover:bg-gold/10'

@@ -10,7 +10,7 @@ import ContactDialog from '@/components/forms/ContactDialog';
 // Featured projects with actual poster images
 const projects = [
   {
-    title: "You Can&apos;t Spell Assault Without Us",
+    title: "You Can't Spell Assault Without Us",
     type: 'Feature Film',
     posterUrl: '/pastwork/youcant.jpeg',
     bio: 'A gripping drama that explores themes of identity, belonging, and the immigrant experience. This feature-length film follows a young immigrant navigating cultural expectations while pursuing their dreams in a new country.',
@@ -112,7 +112,7 @@ export default function Home() {
           playsInline
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
-          <source src="https://minio-4.creox.dev/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3B1YmxpY3N0b3JhZ2UvQnJvb2tseW4lMjBCYWJ5JTIwUHJvbW8lMjAtJTIwTmljayUyMEJlbGxhJTIwXyUyMERCSUcubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9MjVMVEpDUUlPSUZZUVY3NVNSTFQlMkYyMDI1MDkyNCUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MjRUMDUwNjQ2WiZYLUFtei1FeHBpcmVzPTQzMjAwJlgtQW16LVNlY3VyaXR5LVRva2VuPWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoWTJObGMzTkxaWGtpT2lJeU5VeFVTa05SU1U5SlJsbFJWamMxVTFKTVZDSXNJbVY0Y0NJNk1UYzFPRGN6TXpVNU55d2ljR0Z5Wlc1MElqb2liV2x1YVc5aFpHMXBiaUo5LjlzN0lGT0hmaFRGYWFkdXoyNVBpVy1YQVhoaHNCUWcyY21YWlhtdUVVNTdTblM0Mk9ZcnhOMmVUVUpoZEFMQ2NjSXR6aHpkcnc1ajVoalBiWVJDN3hBJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZ2ZXJzaW9uSWQ9bnVsbCZYLUFtei1TaWduYXR1cmU9YmI5ZTBiYjE0YzE2NWZmYTBhMjFhMjY1MmI0MDI4YjQwY2VhOGU0MzJkNjlkMjIwZjA0YzM2MDIzN2ZmNTNjNA" type="video/mp4" />
+          <source src="https://minio-4.creox.dev/api/v1/download-shared-object/aHR0cDovLzEyNy4wLjAuMTo5MDAwL3B1YmxpY3N0b3JhZ2UvQnJvb2tseW4lMjBCYWJ5JTIwUHJvbW8lMjAtJTIwTmljayUyMEJlbGxhJTIwXyUyMERCSUcubXA0P1gtQW16LUFsZ29yaXRobT1BV1M0LUhNQUMtU0hBMjU2JlgtQW16LUNyZWRlbnRpYWw9VkU0RFhHT1pNV1hLMkpYN1hHWU0lMkYyMDI1MDkyNSUyRnVzLWVhc3QtMSUyRnMzJTJGYXdzNF9yZXF1ZXN0JlgtQW16LURhdGU9MjAyNTA5MjVUMTAyNzE0WiZYLUFtei1FeHBpcmVzPTQzMjAwJlgtQW16LVNlY3VyaXR5LVRva2VuPWV5SmhiR2NpT2lKSVV6VXhNaUlzSW5SNWNDSTZJa3BYVkNKOS5leUpoWTJObGMzTkxaWGtpT2lKV1JUUkVXRWRQV2sxWFdFc3lTbGczV0VkWlRTSXNJbVY0Y0NJNk1UYzFPRGd6T0RJM05Td2ljR0Z5Wlc1MElqb2liV2x1YVc5aFpHMXBiaUo5LlRpSnFhTUdWWVB6ZWQ4bWtabFpGWEN1M09ZeHhNaUJyNTJqejFiQS12WXk3V002Wl9FYnlQQmpERnk4QVhiWnhFVS01SzlKQ3N2TUJZcWx0dldqQlVBJlgtQW16LVNpZ25lZEhlYWRlcnM9aG9zdCZ2ZXJzaW9uSWQ9bnVsbCZYLUFtei1TaWduYXR1cmU9MzEzZThlNWNiOWZhYzIyYTBjZTc3MmRmOTJmM2NlMWQxNjM0ZDRkODljMDBhYjNkODFlMTk2OTU4YmU4MTdmOA" type="video/mp4" />
         </video>
         <div className="absolute inset-0 bg-black/50 z-10" />
         <div className="relative z-20 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
@@ -473,7 +473,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* House Employees Section */}
-      <SectionWrapper className="py-24 md:py-32">
+      {/* <SectionWrapper className="py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-4">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-bold text-gold mb-6">
@@ -524,7 +524,7 @@ export default function Home() {
             </div>
           </div>
         </div>
-      </SectionWrapper>
+      </SectionWrapper> */}
     </div>
   );
 }
