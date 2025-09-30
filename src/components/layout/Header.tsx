@@ -12,6 +12,7 @@ const navigation = [
   { name: 'Past Work', href: '/#work', sectionId: 'work' },
   { name: 'Our Story', href: '/#about', sectionId: 'about' },
   { name: 'Services', href: '/#services', sectionId: 'services' },
+  { name: 'Press', href: 'https://www.broadwayworld.com/off-off-broadway/article/-YOU-CANT-SPELL-ASSAULT-WITHOUT-US-to-Premiere-at-NYC-Fringe-20250302', external: true },
 ];
 
 const socialLinks = [
@@ -82,6 +83,8 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
+                target={item.external ? "_blank" : undefined}
+                rel={item.external ? "noopener noreferrer" : undefined}
                 className={`transition-colors font-medium text-sm ${
                   pathname === item.href
                     ? 'text-gold'
@@ -173,6 +176,8 @@ export default function Header() {
                   <Link
                     key={item.name}
                     href={item.href}
+                    target={item.external ? "_blank" : undefined}
+                    rel={item.external ? "noopener noreferrer" : undefined}
                     onClick={closeMobileMenu}
                     className={`block py-4 px-4 rounded-lg text-lg font-medium transition-colors ${
                       pathname === item.href

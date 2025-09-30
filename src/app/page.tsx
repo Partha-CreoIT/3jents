@@ -6,56 +6,104 @@ import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
 import ProjectCard from '@/components/cards/ProjectCard';
 import TeamCard from '@/components/cards/TeamCard';
+import FoundersSection from '@/components/sections/FoundersSection';
 import ContactDialog from '@/components/forms/ContactDialog';
 
 // Featured projects with actual poster images
 const projects = [
   {
     title: "You Can't Spell Assault Without Us",
-    type: 'Feature Film',
+    type: 'World Premiere - Theatrical Play',
     posterUrl: '/pastwork/youcant.jpeg',
-    bio: 'A gripping drama that explores themes of identity, belonging, and the immigrant experience. This feature-length film follows a young immigrant navigating cultural expectations while pursuing their dreams in a new country.',
-    credits: ['Director', 'Producer', 'Cinematographer', 'Sound Designer', 'Editor'],
-    vimeoUrl: 'https://vimeo.com/123456789',
-    youtubeUrl: 'https://youtube.com/watch?v=example1',
+    bio: 'love is a heavy, unwieldy thing; it feels cruel to ask anyone to hold it alone. but any two people can discover and cling to one another out of desperation to experience love, and still find themselves unable to share its load when it arrives. such is the story of natalie and aiden, two young people whose friendship blossoms into romance and quickly turns darker as the world shapes them in ways neither could have expected. how does their love, this enormous abstraction, hold up against the things they know to be truer and more tangible: trauma? gender roles? the exhaustion of growing up? this is not a love story. this is not a love story.',
+    credits: ['Written & Directed by Naira Jain', 'Starring - Leah Davidowtiz, Nick Bella, Vivian Hunt'],
+    vimeoUrl: 'https://na688.vhx.tv/checkout/you-can-t-spell-assault-without-us/purchase',
+    venue: 'NYC Fringe Theater Festival l Chain Theater 312 West 36th Street, NY 10018',
+    crew: [
+      { name: 'Naira Jain', role: 'Writer & Director' },
+      { name: 'Leah Davidowtiz', role: 'Natalie' },
+      { name: 'Nick Bella', role: 'Aiden' },
+      { name: 'Vivian Hunt', role: 'Supporting Cast' }
+    ],
+    photos: [
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg'  // Placeholder - replace with actual production photos
+    ]
   },
   {
     title: 'Sometimes: A Collection of Poems About the Progression of an Ending',
     type: 'Short Film',
     posterUrl: '/pastwork/somtimes_poster.jpeg',
-    bio: 'An experimental short film adaptation of original poetry exploring the emotional journey of relationships, loss, and healing. A meditative reflection on the beauty found in life&apos;s transitions.',
-    credits: ['Director', 'Poet', 'Cinematographer', 'Composer', 'Editor'],
+    bio: 'Sometimes (a collection of poems about the progression of an ending) is a short film depiction of the events told in three short poems, spaced out over the span of three months, as our central character experiences a painful heartbreak. It references on loss, grief, and explores the experience of living a normal day to day in spite of these things we carry, and asks the question of whether or not a person ever truly loses the love they once had for another.',
+    credits: ['Produced by: Nick Bella', 'Written by Alexandra Blanco', 'Directed by Winter Kay McVey & Alexandra Blanco'],
     vimeoUrl: 'https://vimeo.com/123456790',
     websiteUrl: 'https://sometimes-film.com',
+    crew: [
+      { name: 'Nick Bella', role: 'Producer' },
+      { name: 'Alexandra Blanco', role: 'Writer & Director' },
+      { name: 'Winter Kay McVey', role: 'Director' }
+    ],
+    photos: [
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/somtimes_poster.jpeg'  // Placeholder - replace with actual production photos
+    ]
   },
   {
     title: 'Slaps',
-    type: 'Comedy Sketch',
+    type: 'Skit',
     posterUrl: '/pastwork/slaps.jpeg',
-    bio: 'A hilarious comedy sketch series that takes absurd situations and turns them into laugh-out-loud moments. Quick, witty, and perfectly timed for maximum comedic impact.',
-    credits: ['Writer', 'Director', 'Actors', 'Cinematographer', 'Editor'],
+    bio: 'Dave and Stacy Mervis attend a parent teacher conference.',
+    credits: ['Written & Produced by Nick Bella', 'Directed by Joseph Bodner', 'Associate producer: Patrice Yip'],
+    starring: ['Aidan Samwick', 'Nick Bella', 'Olivia Martin'],
     youtubeUrl: 'https://youtube.com/watch?v=example3',
+    crew: [
+      { name: 'Nick Bella', role: 'Writer & Producer' },
+      { name: 'Joseph Bodner', role: 'Director' },
+      { name: 'Patrice Yip', role: 'Associate Producer' },
+      { name: 'Aidan Samwick', role: 'Actor' },
+      { name: 'Nick Bella', role: 'Actor' },
+      { name: 'Olivia Martin', role: 'Actor' }
+    ],
+    photos: [
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/slaps.jpeg'  // Placeholder - replace with actual production photos
+    ]
   },
 ];
 
 const founders = [
   {
-    name: 'Aydin Byrd',
-    role: 'Co-Founder & Creative Director',
-    bio: 'Visionary filmmaker and creative director bringing innovative storytelling to life through compelling narratives and artistic vision. Specializes in theatrical productions and cinematic experiences that challenge conventions and inspire audiences.',
-    imageUrl: '/founder/founder.png',
-  },
-  {
     name: 'Nick Bella',
     role: 'Co-Founder & Producer',
-    bio: 'Dynamic producer and creative force behind 3JENTS, orchestrating seamless productions from concept to completion. Expert in managing complex projects while maintaining artistic integrity and fostering collaborative environments.',
+    bio: 'Hi! I\'m Nick Bella, a proud founding member of 3 Jokers and alumni of NYU Tisch. My artistic story began early on, through my childhood fascination with comedy and horror movies. I feel most alive when I\'m laughing… or scared. So when I\'m not working creatively you\'ll likely find me doing something that makes the heart skip. If you suggested skydiving or trying the world\'s hottest pepper? I\'d say, "I\'m in." These interests, along with my affinity for activism and changemaking, eventually led me to NYU. During my time there, I honed my professional skills as an actor, producer, writer, content-creator, and director. I have both led and performed in a variety of professional projects from short films, to theatrical plays! I firmly believe that it is up to young artists of the world to not only entertain, but to question, comment on, and mold the ever-changing world around us in pursuit of something greater. You have the power to change the future. What is the ocean if not just many, many droplets of water? Let\'s create together.',
     imageUrl: '/founder_1.png',
   },
   {
     name: 'Vish Ishaan',
     role: 'Co-Founder & Technical Director',
-    bio: 'Technical virtuoso and innovative director bridging theater and film through cutting-edge production techniques. Master of visual storytelling, specializing in immersive experiences that push creative boundaries.',
+    bio: 'Hey, I\'m Vish! I\'m a storyteller at heart with a creative energy that colors outside the lines. I believe entertainment is more than an escape - it\'s a way to connect, heal, and spark change. As a proud first gen Indian-American, my mission extends beyond personal success: I\'m determined to reshape Hollywood so people like myself are not only seen but celebrated. If I\'m not acting: I\'m directing, writing, editing, graphic designing, or pouring my heart out into music. My relentless drive to tell stories with impact is the throughline of it all. Having had the chance to act on major network television and in national commercials, I sharpened my ability to perform under pressure while staying grounded and adaptable. I\'m also an NYU Tisch alum with a minor in the Business of Entertainment, combining artistry with strategy in everything I do. Beyond credentials, what attracts collaborators is my energy - helpful, open-hearted, and empathetic - fueled by my loved ones, comics, tech, and a deep-rooted belief to be in constant pursuit of greatness.',
     imageUrl: '/founder_2.png',
+  },
+  {
+    name: 'Aydin Byrd',
+    role: 'Co-Founder & Creative Director',
+    bio: 'I\'m Aydin Byrd, one of the 3 Jokers. As a recent graduate of NYU Tisch, I double majored in Acting and Political Science, and I\'m grateful for every classroom, rehearsal, and conversation that taught me how stories are made and why they matter. My work is driven by an interest in the complexities and contradictions of ordinary life, and I try to translate that into straightforward, authentic, and entertaining storytelling. Ultimately, I love stories and the people who tell them. I love acting and producing because they let me work alongside amazing artists — people whose unique voices and vulnerability teach me more about the world than any curriculum. And I love learning; currently, I\'m in law school pursuing an education in entertainment law with a focus on Intellectual Property, and I hope to use my legal education to improve legal protections for the working artists that help create the cultural fabric of our world.',
+    imageUrl: '/founder/founder.png',
   },
 ];
 
@@ -207,7 +255,7 @@ export default function Home() {
             Our Past Work
           </h2>
           <p className="text-xl md:text-2xl text-grey-light leading-relaxed">
-            Explore our portfolio of films, music videos, and creative projects
+            Explore our portfolio of films, shorts, and creative projects 
             that showcase our commitment to authentic storytelling.
           </p>
         </div>
@@ -224,8 +272,8 @@ export default function Home() {
               Our most notable works that represent the breadth and depth of our creative vision.
             </p>
           </div>
-          <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8">
-            {projects.map((project) => (
+          <div className="space-y-16">
+            {projects.map((project, index) => (
               <ProjectCard
                 key={project.title}
                 title={project.title}
@@ -236,6 +284,11 @@ export default function Home() {
                 vimeoUrl={project.vimeoUrl}
                 youtubeUrl={project.youtubeUrl}
                 websiteUrl={project.websiteUrl}
+                venue={project.venue}
+                starring={project.starring}
+                crew={project.crew}
+                photos={project.photos}
+                isReversed={index % 2 === 1}
               />
             ))}
           </div>
@@ -281,29 +334,40 @@ export default function Home() {
       {/* About Section */}
       <SectionWrapper id="about" className="bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md py-24 md:py-32">
         <div className="max-w-5xl mx-auto px-4">
+
+        <h3 className="text-3xl md:text-4xl font-bold text-gold mb-10 text-center">
+              About Us
+            </h3>
           <div className="bg-black/60 rounded-lg p-10 md:p-16 border border-gold/20">
             <h3 className="text-3xl md:text-4xl font-bold text-gold mb-10 text-center">
-              Our Mission
+              Who Are We?
             </h3>
             <div className="space-y-8 text-grey-light leading-relaxed">
               <p className="text-lg md:text-xl">
-                Founded in 2020, 3JE Productions emerged from a shared vision to amplify
-                underrepresented voices and create content that challenges conventional
-                narratives. What started as a small collaboration between friends has
-                evolved into a thriving creative hub that supports artists, filmmakers,
-                and storytellers from diverse backgrounds.
+                3 Jokers Entertainment is a do-it-all production company specializing in film, content creation, and photography. 3Jents is more than a production company—it's a mission. Rooted in the belief that young artists are the changemakers of the future, we create stories that entertain while giving back to causes that truly make a change for the better.
               </p>
               <p className="text-lg md:text-xl">
-                Our name, 3JE, represents the three founding members and our commitment
-                to authenticity (J), excellence (E), and innovation in everything we create.
-                We believe that great storytelling has the power to inspire change,
-                foster understanding, and build communities.
+                Founded by a multicultural team of NYU alumni, we are committed to building inclusive, collaborative, and inspiring creative environments. Our team has professional experience working all across the call sheet. See our past-work tab to learn more about some of our previous projects!
               </p>
               <p className="text-lg md:text-xl">
-                Today, we continue to push boundaries through our work in film production,
-                music videos, photography, and emerging media formats. We pride ourselves
-                on creating safe, inclusive spaces where creativity can flourish and
-                diverse perspectives are celebrated.
+                We make work that reaches beyond the screen to reflect real lives, spark meaningful conversations, and leave a lasting imprint (and a few moments of laughter) on what makes our industry so special: the people. Join us in bringing stories, your story, to life through images!
+              </p>
+            </div>
+          </div>
+          
+          <div className="bg-black/60 rounded-lg p-10 md:p-16 border border-gold/20 mt-12">
+            <h3 className="text-3xl md:text-4xl font-bold text-gold mb-10 text-center">
+              Our Story
+            </h3>
+            <div className="space-y-8 text-grey-light leading-relaxed">
+              <p className="text-lg md:text-xl">
+                Born from friendship and fire, three NYU Tisch students came together with the passion for uplifting the art of young filmmakers and writers in New York. What began as a dream has blossomed into a flourishing company with focus on creating content both elegantly dramatic, and outrageously funny. Above all, our art makes a statement. Our company is laser-focused on seeking opportunities to give back to the ever changing world around us; The world that inspires us, and drives us to create.
+              </p>
+              <p className="text-lg md:text-xl">
+                Traditionally, a deck of cards holds two jokers, just as the world of theater gives us two masks: comedy and tragedy. Both capture the duality of life. But we believe there's always room for a third—a space where the joyful and the heartbreaking meet, where stories shift from fleeting entertainment to something unforgettable. That's where 3 Jokers lives: in the extra card, in the hidden mask, in the place where art becomes impact.
+              </p>
+              <p className="text-lg md:text-xl font-semibold text-gold italic text-center">
+                "Two jokers make you play the game. The third changes it."
               </p>
             </div>
           </div>
@@ -311,30 +375,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Founders Section */}
-      <SectionWrapper className="bg-gradient-to-br from-white/15 via-gold/8 to-white/25 backdrop-blur-md py-24 md:py-32">
-        <div className="max-w-7xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gold mb-6">
-              Meet Our Founders
-            </h3>
-            <p className="text-grey-light max-w-2xl mx-auto text-lg">
-              The visionaries behind 3JE Productions, bringing together their unique
-              talents and experiences to create something truly special.
-            </p>
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 max-w-6xl mx-auto">
-            {founders.map((founder) => (
-              <TeamCard
-                key={founder.name}
-                name={founder.name}
-                role={founder.role}
-                bio={founder.bio}
-                imageUrl={founder.imageUrl}
-              />
-            ))}
-          </div>
-        </div>
-      </SectionWrapper>
+      <FoundersSection founders={founders} />
 
       {/* Freelancers Section */}
       <SectionWrapper className="bg-gradient-to-br from-black/25 via-gold/12 to-black/35 backdrop-blur-md py-24 md:py-32">
@@ -549,3 +590,4 @@ export default function Home() {
     </div>
   );
 }
+
