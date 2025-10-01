@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
+import ConditionalHeader from "@/components/layout/ConditionalHeader";
 
 const playfairDisplay = Playfair_Display({
   variable: "--font-playfair",
@@ -52,7 +53,7 @@ export default function RootLayout({
         className={`${playfairDisplay.variable} ${inter.variable} ${oswald.variable} antialiased text-white min-h-screen relative`}
       >
         <BackgroundWrapper>
-          <Header />
+          <ConditionalHeader />
           <main>
             {children}
           </main>

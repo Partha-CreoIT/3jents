@@ -8,6 +8,7 @@ import ProjectCard from '@/components/cards/ProjectCard';
 import TeamCard from '@/components/cards/TeamCard';
 import FoundersSection from '@/components/sections/FoundersSection';
 import ContactDialog from '@/components/forms/ContactDialog';
+import Link from 'next/link';
 
 // Featured projects with actual poster images
 const projects = [
@@ -16,7 +17,7 @@ const projects = [
     type: 'World Premiere - Theatrical Play',
     posterUrl: '/pastwork/youcant.jpeg',
     bio: 'love is a heavy, unwieldy thing; it feels cruel to ask anyone to hold it alone. but any two people can discover and cling to one another out of desperation to experience love, and still find themselves unable to share its load when it arrives. such is the story of natalie and aiden, two young people whose friendship blossoms into romance and quickly turns darker as the world shapes them in ways neither could have expected. how does their love, this enormous abstraction, hold up against the things they know to be truer and more tangible: trauma? gender roles? the exhaustion of growing up? this is not a love story. this is not a love story.',
-    credits: ['Written & Directed by Naira Jain', 'Starring - Leah Davidowtiz, Nick Bella, Vivian Hunt'],
+    credits: ['Written & Directed by: Naira Jain', 'Starring: Leah Davidowtiz, Nick Bella, Vivian Hunt'],
     vimeoUrl: 'https://na688.vhx.tv/checkout/you-can-t-spell-assault-without-us/purchase',
     venue: 'NYC Fringe Theater Festival l Chain Theater 312 West 36th Street, NY 10018',
     crew: [
@@ -40,7 +41,7 @@ const projects = [
     type: 'Short Film',
     posterUrl: '/pastwork/somtimes_poster.jpeg',
     bio: 'Sometimes (a collection of poems about the progression of an ending) is a short film depiction of the events told in three short poems, spaced out over the span of three months, as our central character experiences a painful heartbreak. It references on loss, grief, and explores the experience of living a normal day to day in spite of these things we carry, and asks the question of whether or not a person ever truly loses the love they once had for another.',
-    credits: ['Produced by: Nick Bella', 'Written by Alexandra Blanco', 'Directed by Winter Kay McVey & Alexandra Blanco'],
+    credits: ['Produced by: Nick Bella', 'Written by: Alexandra Blanco', 'Directed by: Winter Kay McVey & Alexandra Blanco'],
     vimeoUrl: 'https://vimeo.com/123456790',
     websiteUrl: 'https://sometimes-film.com',
     crew: [
@@ -63,7 +64,7 @@ const projects = [
     type: 'Skit',
     posterUrl: '/pastwork/slaps.jpeg',
     bio: 'Dave and Stacy Mervis attend a parent teacher conference.',
-    credits: ['Written & Produced by Nick Bella', 'Directed by Joseph Bodner', 'Associate producer: Patrice Yip'],
+    credits: ['Written & Produced by: Nick Bella', 'Directed by: Joseph Bodner', 'Associate producer: Patrice Yip'],
     starring: ['Aidan Samwick', 'Nick Bella', 'Olivia Martin'],
     youtubeUrl: 'https://youtube.com/watch?v=example3',
     crew: [
@@ -78,6 +79,8 @@ const projects = [
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
+
+      
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
       '/pastwork/slaps.jpeg', // Placeholder - replace with actual production photos
@@ -153,6 +156,19 @@ const contactInfo = {
 };
 
 export default function Home() {
+  // Restore scroll position when returning from project page
+  useEffect(() => {
+    const scrollPosition = sessionStorage.getItem('scrollPosition');
+    if (scrollPosition) {
+      const position = parseInt(scrollPosition, 10);
+      // Use setTimeout to ensure DOM is fully rendered
+      setTimeout(() => {
+        window.scrollTo({ top: position, behavior: 'instant' });
+        sessionStorage.removeItem('scrollPosition');
+      }, 100);
+    }
+  }, []);
+
   const copyToClipboard = async (text: string) => {
     try {
       await navigator.clipboard.writeText(text);
@@ -315,18 +331,28 @@ export default function Home() {
                 Stay tuned for updates!
               </p>
             </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-8 text-center">
-              <h4 className="text-xl font-semibold text-gold mb-4">Archive</h4>
-              <p className="text-grey-light">
-                Our complete archive of past projects, experiments, and creative explorations.
-              </p>
-            </div>
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-8 text-center">
-              <h4 className="text-xl font-semibold text-gold mb-4">Collaborations</h4>
-              <p className="text-grey-light">
-                Special projects created in partnership with other talented creators and artists.
-              </p>
-            </div>
+            <Link href="/archive">
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-8 text-center hover:border-gold/40 transition-all duration-300 cursor-pointer hover:bg-black/60">
+                <h4 className="text-xl font-semibold text-gold mb-4">Archive</h4>
+                <p className="text-grey-light">
+                  Our complete archive of past projects, experiments, and creative explorations.
+                </p>
+                <div className="mt-4 text-gold/60 text-sm">
+                  View our shorts & reels →
+                </div>
+              </div>
+            </Link>
+            <Link href="/collaborations">
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-8 text-center hover:border-gold/40 transition-all duration-300 cursor-pointer hover:bg-black/60">
+                <h4 className="text-xl font-semibold text-gold mb-4">Collaborations</h4>
+                <p className="text-grey-light">
+                  Special projects created in partnership with other talented creators and artists.
+                </p>
+                <div className="mt-4 text-gold/60 text-sm">
+                  View our partnerships →
+                </div>
+              </div>
+            </Link>
           </div>
         </div>
       </SectionWrapper>

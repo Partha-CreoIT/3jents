@@ -1,31 +1,36 @@
 'use client';
 
 import { useParams } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import Image from 'next/image';
 import { Button } from '@/components/ui/button';
-import Carousel from '@/components/sections/Carousel';
-import ContactForm from '@/components/forms/ContactForm';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
+import PhotoCarousel from '@/components/PhotoCarousel';
 
 // Project data - in a real app, this would come from a database or API
-const projectsData = {
-  'you-cant-spell-assault-without-us': {
+const projectsData: Record<string, any> = {
+  'you-can-t-spell-assault-without-us': {
     title: "You Can't Spell Assault Without Us",
     type: 'World Premiere - Theatrical Play',
     posterUrl: '/pastwork/youcant.jpeg',
-    bio: 'love is a heavy, unwieldy thing; it feels cruel to ask anyone to hold it alone. but any two people can discover and cling to one another out of desperation to experience love, and still find themselves unable to share its load when it arrives. such is the story of natalie and aiden, two young people whose friendship blossoms into romance and quickly turns darker as the world shapes them in ways neither could have expected. how does their love, this enormous abstraction, hold up against the things they know to be truer and more tangible: trauma? gender roles? the exhaustion of growing up? this is not a love story. this is not a love story.',
     credits: ['Written & Directed by Naira Jain', 'Starring - Leah Davidowtiz, Nick Bella, Vivian Hunt'],
     vimeoUrl: 'https://na688.vhx.tv/checkout/you-can-t-spell-assault-without-us/purchase',
     venue: 'NYC Fringe Theater Festival l Chain Theater 312 West 36th Street, NY 10018',
     crew: [
-      { name: 'Naira Jain', role: 'Writer & Director' },
-      { name: 'Leah Davidowtiz', role: 'Natalie' },
-      { name: 'Nick Bella', role: 'Aiden' },
-      { name: 'Vivian Hunt', role: 'Supporting Cast' }
+      { name: 'Naira Jain', role: 'Written and Produced by' },
+      { name: '3JE', role: 'Executive producer' },
+      { name: 'Naira Jain', role: 'Director' },
+      { name: 'Leah Davidowitz', role: 'Natalie' },
+      { name: 'Nick Bella', role: 'Aidan' },
+      { name: 'Vivian Hunt', role: 'Kid' },
+      { name: 'JB Belinato & John Ecker', role: 'Run Crew' },
+      { name: 'Zara Lemieux', role: 'Stage Manager' },
+      { name: 'Tucker Forebeck', role: 'Sound Designer' },
+      { name: 'Aidan Samwick', role: 'Photography' }
     ],
     photos: [
-      '/pastwork/youcant.jpeg', // Placeholder - replace with actual production photos
+      '/pastwork/youcant.jpeg',
       '/pastwork/youcant.jpeg',
       '/pastwork/youcant.jpeg',
       '/pastwork/youcant.jpeg',
@@ -34,18 +39,30 @@ const projectsData = {
       '/pastwork/youcant.jpeg'
     ]
   },
-  'sometimes-a-collection-of-poems': {
+  'sometimes-a-collection-of-poems-about-the-progression-of-an-ending': {
     title: 'Sometimes: A Collection of Poems About the Progression of an Ending',
     type: 'Short Film',
     posterUrl: '/pastwork/somtimes_poster.jpeg',
-    bio: 'Sometimes (a collection of poems about the progression of an ending) is a short film depiction of the events told in three short poems, spaced out over the span of three months, as our central character experiences a painful heartbreak. It references on loss, grief, and explores the experience of living a normal day to day in spite of these things we carry, and asks the question of whether or not a person ever truly loses the love they once had for another.',
     credits: ['Produced by: Nick Bella', 'Written by Alexandra Blanco', 'Directed by Winter Kay McVey & Alexandra Blanco'],
     vimeoUrl: 'https://vimeo.com/123456790',
     websiteUrl: 'https://sometimes-film.com',
     crew: [
-      { name: 'Nick Bella', role: 'Producer' },
-      { name: 'Alexandra Blanco', role: 'Writer & Director' },
-      { name: 'Winter Kay McVey', role: 'Director' }
+      { name: 'Nick Bella', role: 'PRODUCER' },
+      { name: 'Alexandra Blanco', role: 'WRITER' },
+      { name: 'Winter Cam McVey, Alexandra Blanco', role: 'DIRECTOR' },
+      { name: '3 Jokers Entertainment & Nick Bella', role: 'EP' },
+      { name: 'Alexandra Blanco & Aidan Samwick', role: 'CAST' },
+      { name: 'Aidam Samwick', role: 'DP' },
+      { name: 'Olivia Martin & Nick Bella', role: 'AD' },
+      { name: 'Nick Bella', role: 'Camera Op 2' },
+      { name: 'Olivia Martin & Nick Bella', role: '2nd AC' },
+      { name: 'Jacob Dean', role: 'Editor' },
+      { name: 'Alexandra Blanco', role: 'Associate producer (budgeting)' },
+      { name: 'Carl Coetzee', role: 'Gaffer' },
+      { name: 'Safin Karim', role: 'Composer' },
+      { name: 'Naira Jain', role: 'Intimacy Coordinator' },
+      { name: 'Tom Brecker', role: 'Sound Technician' },
+      { name: 'Alexandra Blanco & Nick Bella', role: 'Location scouting' }
     ],
     photos: [
       '/pastwork/somtimes_poster.jpeg',
@@ -66,12 +83,19 @@ const projectsData = {
     starring: ['Aidan Samwick', 'Nick Bella', 'Olivia Martin'],
     youtubeUrl: 'https://youtube.com/watch?v=example3',
     crew: [
-      { name: 'Nick Bella', role: 'Writer & Producer' },
+      { name: 'Nick Bella', role: 'Written & Produced by' },
       { name: 'Joseph Bodner', role: 'Director' },
       { name: 'Patrice Yip', role: 'Associate Producer' },
-      { name: 'Aidan Samwick', role: 'Actor' },
-      { name: 'Nick Bella', role: 'Actor' },
-      { name: 'Olivia Martin', role: 'Actor' }
+      { name: 'Aidan Samwick', role: 'Teacher' },
+      { name: 'Olivia Martin', role: 'Stacy' },
+      { name: 'Nick Bella', role: 'Dave' },
+      { name: 'Sara Angela Gomez', role: 'DP' },
+      { name: 'Carl Coetzee', role: 'Gaffer' },
+      { name: 'Aydin Byrd', role: 'Grip' },
+      { name: 'Philip Drafta', role: 'Swing' },
+      { name: 'MengNa Zhang', role: 'Sound Mixer, Boom Operator' },
+      { name: 'Naira Jain', role: 'Production design / Costumes' },
+      { name: 'John Ecker', role: 'Production assistant' }
     ],
     photos: [
       '/pastwork/slaps.jpeg',
@@ -87,15 +111,32 @@ const projectsData = {
 
 export default function ProjectPage() {
   const params = useParams();
-  const slug = params.slug as string;
-  const project = projectsData[slug as keyof typeof projectsData];
+  const [project, setProject] = useState<any>(null);
+  const [loading, setLoading] = useState(true);
+
+  useEffect(() => {
+    const slug = Array.isArray(params.slug) ? params.slug[0] : params.slug as string;
+    const foundProject = projectsData[slug];
+    setProject(foundProject);
+    setLoading(false);
+  }, [params.slug]);
+
+  if (loading) {
+    return (
+      <div className="min-h-screen bg-black flex items-center justify-center">
+        <div className="text-center">
+          <h1 className="text-4xl font-bold text-gold mb-4">Loading...</h1>
+        </div>
+      </div>
+    );
+  }
 
   if (!project) {
     return (
       <div className="min-h-screen bg-black flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gold mb-4">Project Not Found</h1>
-          <Link href="/#work">
+          <Link href="/">
             <Button variant="outline" className="border-gold text-gold hover:bg-gold hover:text-black">
               Back to Projects
             </Button>
@@ -105,28 +146,15 @@ export default function ProjectPage() {
     );
   }
 
-  const cast = project.crew.filter(member => 
-    member.role.toLowerCase().includes('actor') || 
-    member.role.toLowerCase().includes('character') ||
-    project.starring?.includes(member.name) ||
-    ['Natalie', 'Aiden', 'Supporting Cast'].includes(member.role)
-  );
-
-  const directors = project.crew.filter(member => 
-    member.role.toLowerCase().includes('director') || 
-    member.role.toLowerCase().includes('producer') ||
-    member.role.toLowerCase().includes('writer')
-  );
-
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-black text-white">
       {/* Back Button */}
       <div className="fixed top-6 left-6 z-50">
-        <Link href="/#work">
+        <Link href="/">
           <Button
             variant="outline"
             size="sm"
-            className="border-gold text-gold hover:bg-gold hover:text-black"
+            className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
           >
             <ArrowLeft className="h-4 w-4 mr-2" />
             Back to Projects
@@ -134,132 +162,106 @@ export default function ProjectPage() {
         </Link>
       </div>
 
-      <div className="pt-20 pb-16">
-        <div className="max-w-7xl mx-auto px-4">
+      <div className="pt-16 pb-16">
+        <div className="max-w-4xl mx-auto px-4">
           {/* Project Title */}
-          <div className="text-center mb-12">
-            <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4">
-              {project.title.toUpperCase()}
+          <div className="text-center mb-8">
+            <h1 className="text-4xl md:text-6xl font-bold text-gold mb-4 font-heading">
+              {project.title}
             </h1>
-            <p className="text-xl md:text-2xl text-white">
-              BY {project.credits[0]?.split('by ')[1]?.toUpperCase() || 'UNKNOWN'}
+            <p className="text-xl md:text-2xl text-white font-accent">
+              by {project.credits[0]?.split('by ')[1] || '3 Jokers Entertainment'}
             </p>
           </div>
 
-          {/* Photo Carousel */}
-          <div className="mb-16">
-            <Carousel
-              items={project.photos.map((photo, index) => ({
-                id: `${project.title}-photo-${index}`,
-                imageUrl: photo,
-                alt: `${project.title} production photo ${index + 1}`
-              }))}
-              autoPlay={true}
-              autoPlayInterval={4000}
-              showControls={true}
-              showIndicators={true}
-            />
+          {/* Production Photos Carousel */}
+          <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8 text-center font-heading">
+              PRODUCTION PHOTOS
+            </h2>
+            <PhotoCarousel photos={project.photos} title={project.title} />
           </div>
 
-          {/* Cast and Director Information */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 mb-16">
-            {/* Cast Section - Left Side */}
-            <div className="bg-gold/10 rounded-lg p-8 border border-gold/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6 text-center">
-                CAST
-              </h2>
-              <div className="space-y-4">
-                {cast.map((member, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-black/50 rounded border border-gold/10">
-                    <span className="text-white font-medium text-lg">{member.name}</span>
-                    <span className="text-gold text-sm">{member.role}</span>
+          {/* Crew and Cast Section */}
+          <div className="mb-12">
+            <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8 text-center font-heading">
+              CAST & CREW
+            </h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+              {project.crew.map((member: { name: string; role: string }, index: number) => (
+                <div key={index} className="bg-black/50 rounded-lg border border-gold/20 p-4 hover:border-gold/40 transition-colors">
+                  <div className="space-y-1">
+                    <div className="text-gold text-xs font-semibold uppercase tracking-wider leading-tight">
+                      {member.role}
+                    </div>
+                    <div className="text-white font-medium text-sm leading-tight">
+                      {member.name}
+                    </div>
                   </div>
-                ))}
-              </div>
-            </div>
-
-            {/* Director & Production Team - Right Side */}
-            <div className="bg-gold/10 rounded-lg p-8 border border-gold/20">
-              <h2 className="text-2xl md:text-3xl font-bold text-gold mb-6 text-center">
-                DIRECTOR & PRODUCTION
-              </h2>
-              <div className="space-y-4">
-                {directors.map((member, index) => (
-                  <div key={index} className="flex justify-between items-center p-3 bg-black/50 rounded border border-gold/10">
-                    <span className="text-white font-medium text-lg">{member.name}</span>
-                    <span className="text-gold text-sm">{member.role}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* Additional Information */}
-              <div className="mt-6 space-y-3">
-                <div className="p-3 bg-black/30 rounded">
-                  <p className="text-gold font-semibold mb-1">Type:</p>
-                  <p className="text-white">{project.type}</p>
                 </div>
-                {project.venue && (
-                  <div className="p-3 bg-black/30 rounded">
-                    <p className="text-gold font-semibold mb-1">Venue:</p>
-                    <p className="text-white text-sm">{project.venue}</p>
-                  </div>
-                )}
-                <div className="p-3 bg-black/30 rounded">
-                  <p className="text-gold font-semibold mb-1">Description:</p>
-                  <p className="text-white text-sm leading-relaxed">{project.bio}</p>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
 
-          {/* Action Buttons */}
-          <div className="flex flex-wrap gap-4 justify-center mb-16">
-            {project.vimeoUrl && (
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gold text-gold hover:bg-gold hover:text-black px-8"
-                onClick={() => window.open(project.vimeoUrl, '_blank')}
-              >
-                WATCH ON VIMEO
-              </Button>
-            )}
-            {project.youtubeUrl && (
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gold text-gold hover:bg-gold hover:text-black px-8"
-                onClick={() => window.open(project.youtubeUrl, '_blank')}
-              >
-                WATCH ON YOUTUBE
-              </Button>
-            )}
-            {project.websiteUrl && (
-              <Button
-                variant="outline"
-                size="lg"
-                className="border-gold text-gold hover:bg-gold hover:text-black px-8"
-                onClick={() => window.open(project.websiteUrl, '_blank')}
-              >
-                VISIT WEBSITE
-              </Button>
-            )}
-          </div>
+          
 
           {/* Contact Us Section */}
-          <div className="bg-gradient-to-br from-gold/5 via-white/10 to-gold/5 backdrop-blur-md rounded-lg p-8 md:p-12 border border-gold/20">
+          <div className="bg-black/60 rounded-lg p-8 md:p-12 border border-gold/20">
             <div className="text-center mb-8">
-              <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+              <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4 font-heading">
                 CONTACT US!
               </h2>
-              <p className="text-grey-light text-lg">
+              <p className="text-grey-light text-lg mb-6">
                 Interested in working with us or learning more about this project?
               </p>
             </div>
-            <ContactForm />
+
+            {/* Contact Form */}
+            <div className="max-w-md mx-auto">
+              <form className="space-y-6">
+                <div>
+                  <input
+                    type="text"
+                    placeholder="First name"
+                    className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="text"
+                    placeholder="Last name"
+                    className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  />
+                </div>
+                <div>
+                  <input
+                    type="email"
+                    placeholder="Email"
+                    className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                  />
+                </div>
+                <div>
+                  <textarea
+                    rows={4}
+                    placeholder="Write a message"
+                    className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold resize-none"
+                  ></textarea>
+                </div>
+                <Button
+                  type="submit"
+                  className="w-full bg-gold hover:bg-gold-light text-black font-semibold py-3 px-6 rounded-md transition-colors"
+                >
+                  Submit
+                </Button>
+              </form>
+              <p className="text-center text-grey-light text-sm mt-4">
+                Thanks for submitting!
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </div>
   );
 }
+
