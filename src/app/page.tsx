@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef, useEffect } from 'react';
+import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
@@ -142,14 +142,6 @@ const freelancers = [
     trades: ['Cinematography', 'Video Editing', 'Lighting Design'],
   },
 ];
-
-const houseEmployees = {
-  founders: ['Nick Bella', 'Vish Ishaan', 'Aydin Byrd'],
-  photographers: ['Nick Bella', 'Aidan Samwick'],
-  investors: ['Paul Bella', 'Michael Villota'],
-  cfo: ['Paul Bella'],
-  producers: ['Patrice Yip', 'Nick Bella'],
-};
 
 const contactInfo = {
   email: 'network@3jents.com',
@@ -370,7 +362,7 @@ export default function Home() {
             </h3>
             <div className="space-y-8 text-grey-light leading-relaxed">
               <p className="text-lg md:text-xl">
-                3 Jokers Entertainment is a do-it-all production company specializing in film, content creation, and photography. 3Jents is more than a production company—it's a mission. Rooted in the belief that young artists are the changemakers of the future, we create stories that entertain while giving back to causes that truly make a change for the better.
+                3 Jokers Entertainment is a do-it-all production company specializing in film, content creation, and photography. 3Jents is more than a production company—it&apos;s a mission. Rooted in the belief that young artists are the changemakers of the future, we create stories that entertain while giving back to causes that truly make a change for the better.
               </p>
               <p className="text-lg md:text-xl">
                 Founded by a multicultural team of NYU alumni, we are committed to building inclusive, collaborative, and inspiring creative environments. Our team has professional experience working all across the call sheet. See our past-work tab to learn more about some of our previous projects!
@@ -390,10 +382,10 @@ export default function Home() {
                 Born from friendship and fire, three NYU Tisch students came together with the passion for uplifting the art of young filmmakers and writers in New York. What began as a dream has blossomed into a flourishing company with focus on creating content both elegantly dramatic, and outrageously funny. Above all, our art makes a statement. Our company is laser-focused on seeking opportunities to give back to the ever changing world around us; The world that inspires us, and drives us to create.
               </p>
               <p className="text-lg md:text-xl">
-                Traditionally, a deck of cards holds two jokers, just as the world of theater gives us two masks: comedy and tragedy. Both capture the duality of life. But we believe there's always room for a third—a space where the joyful and the heartbreaking meet, where stories shift from fleeting entertainment to something unforgettable. That's where 3 Jokers lives: in the extra card, in the hidden mask, in the place where art becomes impact.
+                Traditionally, a deck of cards holds two jokers, just as the world of theater gives us two masks: comedy and tragedy. Both capture the duality of life. But we believe there&apos;s always room for a third—a space where the joyful and the heartbreaking meet, where stories shift from fleeting entertainment to something unforgettable. That&apos;s where 3 Jokers lives: in the extra card, in the hidden mask, in the place where art becomes impact.
               </p>
               <p className="text-lg md:text-xl font-semibold text-gold italic text-center">
-                "Two jokers make you play the game. The third changes it."
+                &ldquo;Two jokers make you play the game. The third changes it.&rdquo;
               </p>
             </div>
           </div>

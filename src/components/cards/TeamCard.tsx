@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import { Card, CardContent } from '@/components/ui/card';
-import { ExternalLink, Instagram } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 
 interface TeamCardProps {
@@ -20,7 +20,6 @@ export default function TeamCard({
   role,
   bio,
   imageUrl,
-  instagramUrl,
   websiteUrl,
   trades = []
 }: TeamCardProps) {

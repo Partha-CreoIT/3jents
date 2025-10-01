@@ -2,14 +2,33 @@
 
 import { useParams } from 'next/navigation';
 import { useEffect, useState } from 'react';
-import Image from 'next/image';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
 import PhotoCarousel from '@/components/PhotoCarousel';
 
+interface CrewMember {
+  name: string;
+  role: string;
+}
+
+interface Project {
+  title: string;
+  type: string;
+  posterUrl: string;
+  credits: string[];
+  vimeoUrl?: string;
+  venue?: string;
+  crew: CrewMember[];
+  photos: string[];
+  bio?: string;
+  starring?: string[];
+  youtubeUrl?: string;
+  websiteUrl?: string;
+}
+
 // Project data - in a real app, this would come from a database or API
-const projectsData: Record<string, any> = {
+const projectsData: Record<string, Project> = {
   'you-can-t-spell-assault-without-us': {
     title: "You Can't Spell Assault Without Us",
     type: 'World Premiere - Theatrical Play',
@@ -111,7 +130,7 @@ const projectsData: Record<string, any> = {
 
 export default function ProjectPage() {
   const params = useParams();
-  const [project, setProject] = useState<any>(null);
+  const [project, setProject] = useState<Project | null>(null);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {

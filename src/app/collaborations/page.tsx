@@ -147,7 +147,7 @@ export default function CollaborationsPage() {
               </div>
               <h4 className="text-xl font-semibold text-gold mb-4">More Coming Soon</h4>
               <p className="text-grey-light text-sm leading-relaxed">
-                We're constantly working on exciting new collaborations.
+                We&apos;re constantly working on exciting new collaborations.
                 Stay tuned for future partnerships and creative projects!
               </p>
             </motion.div>

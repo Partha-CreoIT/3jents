@@ -30,12 +30,8 @@ export default function ProjectCard({
   bio,
   credits,
   vimeoUrl,
-  youtubeUrl,
-  websiteUrl,
   venue,
   starring,
-  crew = [],
-  photos = [],
   isReversed = false,
 }: ProjectCardProps) {
   return (

@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import { Playfair_Display, Inter, Oswald } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import BackgroundWrapper from "@/components/BackgroundWrapper";
 import ConditionalHeader from "@/components/layout/ConditionalHeader";
