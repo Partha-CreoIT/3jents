@@ -17,12 +17,12 @@ const projects = [
     type: 'World Premiere - Theatrical Play',
     posterUrl: '/pastwork/youcant.jpeg',
     bio: 'love is a heavy, unwieldy thing; it feels cruel to ask anyone to hold it alone. but any two people can discover and cling to one another out of desperation to experience love, and still find themselves unable to share its load when it arrives. such is the story of natalie and aiden, two young people whose friendship blossoms into romance and quickly turns darker as the world shapes them in ways neither could have expected. how does their love, this enormous abstraction, hold up against the things they know to be truer and more tangible: trauma? gender roles? the exhaustion of growing up? this is not a love story. this is not a love story.',
-    credits: ['Written & Directed by: Naira Jain', 'Starring: Leah Davidowtiz, Nick Bella, Vivian Hunt'],
+    credits: ['Written & Directed by: Naira Sarin Jain', 'Starring: Leah Davidowitz, Nick Bella, Vivian Hunt'],
     vimeoUrl: 'https://na688.vhx.tv/checkout/you-can-t-spell-assault-without-us/purchase',
     venue: 'NYC Fringe Theater Festival l Chain Theater 312 West 36th Street, NY 10018',
     crew: [
-      { name: 'Naira Jain', role: 'Writer & Director' },
-      { name: 'Leah Davidowtiz', role: 'Natalie' },
+      { name: 'Naira Sarin Jain', role: 'Writer & Director' },
+      { name: 'Leah Davidowitz', role: 'Natalie' },
       { name: 'Nick Bella', role: 'Aiden' },
       { name: 'Vivian Hunt', role: 'Supporting Cast' }
     ],
@@ -41,7 +41,7 @@ const projects = [
     type: 'Short Film',
     posterUrl: '/pastwork/somtimes_poster.jpeg',
     bio: 'Sometimes (a collection of poems about the progression of an ending) is a short film depiction of the events told in three short poems, spaced out over the span of three months, as our central character experiences a painful heartbreak. It references on loss, grief, and explores the experience of living a normal day to day in spite of these things we carry, and asks the question of whether or not a person ever truly loses the love they once had for another.',
-    credits: ['Produced by: Nick Bella', 'Written by: Alexandra Blanco', 'Directed by: Winter Kay McVey & Alexandra Blanco'],
+    credits: ['Produced by: Nick Bella', 'Written & Directed by: Alexandra Blanco & Winter Kay McVey'],
     vimeoUrl: 'https://vimeo.com/123456790',
     websiteUrl: 'https://sometimes-film.com',
     crew: [
@@ -118,7 +118,7 @@ const freelancers = [
     trades: ['Photography', 'Portraiture', 'Event Photography'],
   },
   {
-    name: 'Naira Jain',
+    name: 'Naira Sarin Jain',
     role: 'Photographer & Intimacy Coordinator',
     bio: 'Versatile creative professional combining photography expertise with intimacy coordination skills. Creates safe, respectful environments while capturing beautiful, authentic visual stories.',
     trades: ['Photography', 'Intimacy Coordination', 'Production Support'],
@@ -221,7 +221,7 @@ export default function Home() {
               transition={{ duration: 0.8, delay: 0.6 }}
               className="text-lg text-white/90 max-w-3xl mx-auto font-body"
             >
-              Creating compelling stories through live performance and cinematic excellence. A dynamic collective of artists dedicated to collaborative storytelling.
+              A dynamic collective of artists dedicated to collaborative storytelling through live performance and cinematic excellence. Empowered voices, Ignited imaginations.
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -277,7 +277,7 @@ export default function Home() {
               Featured Projects
             </h3>
             <p className="text-grey-light max-w-2xl mx-auto text-lg">
-              Our most notable works that represent the breadth and depth of our creative vision.
+              Our most recent and notable works that represent the depth of our creative vision.
             </p>
           </div>
           <div className="space-y-16">
@@ -304,7 +304,7 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Additional Projects Grid */}
-      <SectionWrapper>
+      <SectionWrapper className="bg-gradient-to-br from-white/25 via-gold/15 to-white/35 backdrop-blur-md">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
             <h3 className="text-3xl md:text-4xl font-bold text-gold mb-4">
@@ -367,9 +367,6 @@ export default function Home() {
               <p className="text-lg md:text-xl">
                 Founded by a multicultural team of NYU alumni, we are committed to building inclusive, collaborative, and inspiring creative environments. Our team has professional experience working all across the call sheet. See our past-work tab to learn more about some of our previous projects!
               </p>
-              <p className="text-lg md:text-xl">
-                We make work that reaches beyond the screen to reflect real lives, spark meaningful conversations, and leave a lasting imprint (and a few moments of laughter) on what makes our industry so special: the people. Join us in bringing stories, your story, to life through images!
-              </p>
             </div>
           </div>
           
@@ -382,7 +379,7 @@ export default function Home() {
                 Born from friendship and fire, three NYU Tisch students came together with the passion for uplifting the art of young filmmakers and writers in New York. What began as a dream has blossomed into a flourishing company with focus on creating content both elegantly dramatic, and outrageously funny. Above all, our art makes a statement. Our company is laser-focused on seeking opportunities to give back to the ever changing world around us; The world that inspires us, and drives us to create.
               </p>
               <p className="text-lg md:text-xl">
-                Traditionally, a deck of cards holds two jokers, just as the world of theater gives us two masks: comedy and tragedy. Both capture the duality of life. But we believe there&apos;s always room for a third—a space where the joyful and the heartbreaking meet, where stories shift from fleeting entertainment to something unforgettable. That&apos;s where 3 Jokers lives: in the extra card, in the hidden mask, in the place where art becomes impact.
+                Traditionally, a deck of cards holds two jokers, just as the world of theater gives us two masks: comedy and tragedy. Both capture the duality of life. But we believe there&apos;s always a third option- a space where the joyful and the heartbreaking meet, where stories shift from fleeting entertainment to something unforgettable. That&apos;s where 3 Jokers lives: in the extra card, in the hidden mask, in the place where art becomes impact.
               </p>
               <p className="text-lg md:text-xl font-semibold text-gold italic text-center">
                 &ldquo;Two jokers make you play the game. The third changes it.&rdquo;
@@ -457,8 +454,17 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Theater Production</h3>
                 <p className="text-grey-light text-sm leading-relaxed">
-                  Full-scale theatrical productions from script development to opening night. We handle everything from casting to technical direction.
+                  
+                  Full-scale theatrical productions. We work with you from script development to opening night.
                 </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjprDcsRwg3daCue2P3Gmly1E4BWohu9tAXmkiXLEjzBLeaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="sm"
+                    className="bg-gold hover:bg-gold-light text-black font-semibold px-4 py-2 font-accent"
+                  >
+                    Tell us about your project →
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -472,8 +478,16 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Film Production</h3>
                 <p className="text-grey-light text-sm leading-relaxed">
-                  Cinematic storytelling through short films, features, and documentaries. Pre-production to post-production services.
+                  We're more than just producers! We offer a wide variety of services from pre-production to post-production.
                 </p>
+                <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjprDcsRwg3daCue2P3Gmly1E4BWohu9tAXmkiXLEjzBLeaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
+                  <Button
+                    size="sm"
+                    className="bg-gold hover:bg-gold-light text-black font-semibold px-4 py-2 font-accent"
+                  >
+                    Tell us about your project →
+                  </Button>
+                </a>
               </div>
             </div>
 
@@ -488,60 +502,80 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Photography</h3>
                 <p className="text-grey-light text-sm leading-relaxed">
-                  Professional photography services for events, portraits, and promotional materials with artistic vision and technical excellence.
+                  Professional photography services for events, headshots, and promotional materials. Did we mention our custom packages fit your budget?
                 </p>
+                <Link href="/services/photography">
+                  <Button
+                    size="sm"
+                    className="bg-gold hover:bg-gold-light text-black font-semibold px-4 py-2 font-accent"
+                  >
+                    See More →
+                  </Button>
+                </Link>
               </div>
             </div>
 
             {/* Creative Consultation */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
+              <div className="text-center space-y-4 h-full flex flex-col">
+                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gold">Creative Consultation</h3>
-                <p className="text-grey-light text-sm leading-relaxed">
-                  Strategic guidance and creative direction for your projects. From concept development to execution planning.
-                </p>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-gold">Creative Consultation</h3>
+                  <p className="text-grey-light text-sm leading-relaxed">
+                    Schedule a script or project consultation with one of our in-house writers or producers. Our writers specialize in developing new works. A premium service built to elevate your creative and commercial potential.
+                  </p>
+                </div>
+                {/* Spacer for button alignment */}
+                <div className="h-10"></div>
               </div>
             </div>
 
             {/* Technical Services */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
+              <div className="text-center space-y-4 h-full flex flex-col">
+                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gold">Technical Services</h3>
-                <p className="text-grey-light text-sm leading-relaxed">
-                  Lighting, sound, video production, and post-production services. State-of-the-art equipment and expert technicians.
-                </p>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-gold">Crew Sourcing</h3>
+                  <p className="text-grey-light text-sm leading-relaxed">
+                    <span className="font-bold text-gold">Creative force, ready to move.</span> Tap into our database of trusted &amp; vetted professionals. We handle outreach, interviews, and recommendations so you don’t waste time chasing availability. <span className="italic text-gold/80">Note: Services applicable only for paid crew.</span>
+                  </p>
+                </div>
+                {/* Spacer for button alignment */}
+                <div className="h-10"></div>
               </div>
             </div>
 
             {/* Collaborative Projects */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
-                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
+              <div className="text-center space-y-4 h-full flex flex-col">
+                <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center flex-shrink-0">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
                   </svg>
                 </div>
-                <h3 className="text-xl font-semibold text-gold">Collaborative Projects</h3>
-                <p className="text-grey-light text-sm leading-relaxed">
-                  Join our creative network. We partner with artists, creators, and organizations for unique collaborative ventures.
-                </p>
+                <div className="flex-grow">
+                  <h3 className="text-xl font-semibold text-gold">Contracts & Onboarding Agreements</h3>
+                  <p className="text-grey-light text-sm leading-relaxed">
+                    <span className="font-bold text-gold">Behind every great scene is solid paperwork.</span> From onboarding forms to contracts and NDA's, we'll make sure your paperwork is handled, secure, and shoot-ready. Includes custom agreements for cast, crew, collaborators, and more.
+                  </p>
+                </div>
+                {/* Spacer for button alignment */}
+                <div className="h-10"></div>
               </div>
             </div>
           </div>
 
           <div className="text-center">
-            <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjprDcsRwg3daCue2P3Gmly1E4BWohu9tAXmkiXLEjzBLeaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
               <Button
                 variant="outline"
                 size="lg"
@@ -549,7 +583,7 @@ export default function Home() {
               >
                 Get In Touch About Services
               </Button>
-            </ContactDialog>
+            </a>
           </div>
         </div>
       </SectionWrapper>

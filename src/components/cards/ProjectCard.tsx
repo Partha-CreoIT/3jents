@@ -38,17 +38,19 @@ export default function ProjectCard({
     <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
       <div className={`flex flex-col lg:flex-row gap-8 lg:gap-12 items-center ${isReversed ? 'lg:flex-row-reverse' : ''}`}>
         {/* Project Image */}
-        <div className="w-full lg:w-1/2">
-          <div className="relative aspect-[3/4] w-full max-w-md mx-auto overflow-hidden rounded-lg">
-            <Image
-              src={posterUrl}
-              alt={title}
-              fill
-              className="object-cover object-center hover:scale-105 transition-transform duration-500"
-              sizes="(max-width: 768px) 100vw, 50vw"
-            />
-          </div>
-        </div>
+        {/* Project Image */}
+<div className="w-full lg:w-1/2">
+  <div className="relative aspect-[3/4] w-full max-w-sm mx-auto rounded-xl overflow-hidden bg-black/30">
+    <Image
+      src={posterUrl}
+      alt={title}
+      fill
+      className="object-contain p-1" // optional small padding to avoid touching edges
+      sizes="(max-width: 768px) 100vw, 50vw"
+      priority
+    />
+  </div>
+</div>
 
         {/* Project Details */}
         <div className="w-full lg:w-1/2 space-y-6 text-left">

@@ -33,15 +33,15 @@ const projectsData: Record<string, Project> = {
     title: "You Can't Spell Assault Without Us",
     type: 'World Premiere - Theatrical Play',
     posterUrl: '/pastwork/youcant.jpeg',
-    credits: ['Written & Directed by Naira Jain', 'Starring - Leah Davidowtiz, Nick Bella, Vivian Hunt'],
+    credits: ['Written & Directed by Naira Sarin Jain', 'Starring - Leah Davidowitz, Nick Bella, Vivian Hunt'],
     vimeoUrl: 'https://na688.vhx.tv/checkout/you-can-t-spell-assault-without-us/purchase',
     venue: 'NYC Fringe Theater Festival l Chain Theater 312 West 36th Street, NY 10018',
     crew: [
-      { name: 'Naira Jain', role: 'Written and Produced by' },
-      { name: '3JE', role: 'Executive producer' },
-      { name: 'Naira Jain', role: 'Director' },
+      { name: 'Naira Sarin Jain', role: 'Written and Produced by' },
+      { name: '3 Jokers Entertainment', role: 'Executive producer' },
+      { name: 'Naira Sarin Jain', role: 'Director' },
       { name: 'Leah Davidowitz', role: 'Natalie' },
-      { name: 'Nick Bella', role: 'Aidan' },
+      { name: 'Nick Bella', role: 'Aiden' },
       { name: 'Vivian Hunt', role: 'Kid' },
       { name: 'JB Belinato & John Ecker', role: 'Run Crew' },
       { name: 'Zara Lemieux', role: 'Stage Manager' },
@@ -49,48 +49,50 @@ const projectsData: Record<string, Project> = {
       { name: 'Aidan Samwick', role: 'Photography' }
     ],
     photos: [
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg',
-      '/pastwork/youcant.jpeg'
+      '/ycsawu/FINAL-WEB-YCSAWU-01.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-03.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-04.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-05.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-06.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-07.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-08.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-09.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-10.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-11.webp',
+      '/ycsawu/FINAL-WEB-YCSAWU-12.webp'
     ]
   },
   'sometimes-a-collection-of-poems-about-the-progression-of-an-ending': {
     title: 'Sometimes: A Collection of Poems About the Progression of an Ending',
     type: 'Short Film',
     posterUrl: '/pastwork/somtimes_poster.jpeg',
-    credits: ['Produced by: Nick Bella', 'Written by Alexandra Blanco', 'Directed by Winter Kay McVey & Alexandra Blanco'],
+    credits: ['Produced by: Nick Bella', 'Written & Directed by: Alexandra Blanco & Winter Kay McVey'],
     vimeoUrl: 'https://vimeo.com/123456790',
     websiteUrl: 'https://sometimes-film.com',
     crew: [
       { name: 'Nick Bella', role: 'PRODUCER' },
       { name: 'Alexandra Blanco', role: 'WRITER' },
       { name: 'Winter Cam McVey, Alexandra Blanco', role: 'DIRECTOR' },
-      { name: '3 Jokers Entertainment & Nick Bella', role: 'EP' },
+      { name: '3 Jokers Entertainment & Nick Bella', role: 'Executive Producer' },
       { name: 'Alexandra Blanco & Aidan Samwick', role: 'CAST' },
       { name: 'Aidam Samwick', role: 'DP' },
       { name: 'Olivia Martin & Nick Bella', role: 'AD' },
       { name: 'Nick Bella', role: 'Camera Op 2' },
       { name: 'Olivia Martin & Nick Bella', role: '2nd AC' },
       { name: 'Jacob Dean', role: 'Editor' },
-      { name: 'Alexandra Blanco', role: 'Associate producer (budgeting)' },
+      { name: 'Alexandra Blanco', role: 'Associate Producer' },
       { name: 'Carl Coetzee', role: 'Gaffer' },
       { name: 'Safin Karim', role: 'Composer' },
-      { name: 'Naira Jain', role: 'Intimacy Coordinator' },
+      { name: 'Naira Sarin Jain', role: 'Intimacy Coordinator' },
       { name: 'Tom Brecker', role: 'Sound Technician' },
       { name: 'Alexandra Blanco & Nick Bella', role: 'Location scouting' }
     ],
     photos: [
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg',
-      '/pastwork/somtimes_poster.jpeg'
+      '/sometimes/FILM-STILL-1.webp',
+      '/sometimes/STILL-2-JPEG.webp',
+      '/sometimes/STILL-3-JPEG.webp',
+      '/sometimes/STILL-4-JPEG.webp',
+      '/sometimes/STILL-5-JPEG.webp',
     ]
   },
   'slaps': {
@@ -113,17 +115,18 @@ const projectsData: Record<string, Project> = {
       { name: 'Aydin Byrd', role: 'Grip' },
       { name: 'Philip Drafta', role: 'Swing' },
       { name: 'MengNa Zhang', role: 'Sound Mixer, Boom Operator' },
-      { name: 'Naira Jain', role: 'Production design / Costumes' },
+      { name: 'Naira Sarin Jain', role: 'Production design / Costumes' },
       { name: 'John Ecker', role: 'Production assistant' }
     ],
     photos: [
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg',
-      '/pastwork/slaps.jpeg'
+      '/slaps/1H3.00_00_13_04.Still006.webp',
+      '/slaps/1H3.00_00_26_05.Still010.webp',
+      '/slaps/1H3.00_00_54_20.Still012.webp',
+      '/slaps/1H3.00_01_14_04.Still014.webp',
+      '/slaps/1H3.00_02_29_04.Still016.webp',
+      '/slaps/1H3.00_02_38_15.Still009.webp',
+      '/slaps/1H3.00_06_21_22.Still005.webp',
+      '/slaps/1H3.00_06_26_05.Still001.webp'
     ]
   }
 };
@@ -166,7 +169,7 @@ export default function ProjectPage() {
   }
 
   return (
-    <div className="min-h-screen bg-black text-white">
+    <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/10 to-black/30 text-white">
       {/* Back Button */}
       <div className="fixed top-6 left-6 z-50">
         <Link href="/">
@@ -193,13 +196,29 @@ export default function ProjectPage() {
             </p>
           </div>
 
-          {/* Production Photos Carousel */}
-          <div className="mb-12">
-            <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8 text-center font-heading">
-              PRODUCTION PHOTOS
-            </h2>
-            <PhotoCarousel photos={project.photos} title={project.title} />
-          </div>
+          {/* Production Photos Scrollable Gallery */}
+<div className="mb-12">
+  <h2 className="text-2xl md:text-3xl font-bold text-gold mb-8 text-center font-heading">
+    PRODUCTION PHOTOS
+  </h2>
+
+  <div className="overflow-x-auto scrollbar-hide">
+    <div className="flex space-x-4 min-w-max px-2">
+      {project.photos.map((photo, index) => (
+        <div
+          key={index}
+          className="flex-shrink-0 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/40 transition-all duration-300 bg-black/40"
+        >
+          <img
+            src={photo}
+            alt={`${project.title} photo ${index + 1}`}
+            className="h-56 md:h-64 w-auto object-contain rounded-lg"
+          />
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
 
           {/* Crew and Cast Section */}
           <div className="mb-12">

@@ -21,8 +21,7 @@ export default function FoundersSection({ founders }: FoundersSectionProps) {
             Meet Our Founders
           </h3>
           <p className="text-grey-light max-w-2xl mx-auto text-lg">
-            The visionaries behind 3JE Productions, bringing together their unique
-            talents and experiences to create something truly special.
+          The visionaries behind 3 Jokers, bringing together their unique talents and experiences to create something truly special
           </p>
         </div>
 
@@ -40,16 +39,15 @@ export default function FoundersSection({ founders }: FoundersSectionProps) {
             >
               {/* Image Section */}
               <div className="flex-shrink-0 w-full lg:w-1/2">
-                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl shadow-2xl group cursor-pointer transition-all duration-500 border-2 border-transparent hover:border-gold">
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl shadow-2xl group transition-all duration-500 border-2 border-transparent hover:border-gold">
                   <Image
                     src={founder.imageUrl}
                     alt={founder.name}
                     fill
-                    className="object-cover transition-all duration-700 group-hover:scale-105"
+                    className="object-cover rounded-xl transition-all duration-700 group-hover:scale-95"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent transition-opacity duration-500 group-hover:from-black/40" />
-                  <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>
 
