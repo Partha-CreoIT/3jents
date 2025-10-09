@@ -10,9 +10,9 @@ export default function ConditionalHeader() {
   const isProjectPage = pathname.startsWith('/projects/');
   const isArchivePage = pathname === '/archive';
   const isCollaborationsPage = pathname === '/collaborations';
-  
+  const isGetInvolvedPage = pathname === '/get-involved';
 
-  if (isProjectPage || isArchivePage || isCollaborationsPage) {
+  if (isProjectPage || isArchivePage || isCollaborationsPage || isGetInvolvedPage) {
     return null;
   }
 

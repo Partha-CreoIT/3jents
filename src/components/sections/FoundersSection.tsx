@@ -40,15 +40,15 @@ export default function FoundersSection({ founders }: FoundersSectionProps) {
             >
               {/* Image Section */}
               <div className="flex-shrink-0 w-full lg:w-1/2">
-                <div className="relative h-[400px] md:h-[800px] w-full overflow-hidden rounded-xl shadow-2xl group cursor-pointer transition-all duration-500 border-2 border-transparent hover:border-gold">80
+                <div className="relative aspect-[3/4] w-full overflow-hidden rounded-xl shadow-2xl group cursor-pointer transition-all duration-500 border-2 border-transparent hover:border-gold">
                   <Image
                     src={founder.imageUrl}
                     alt={founder.name}
                     fill
-                    className="object-cover transition-all duration-700 group-hover:scale-110 group-hover:rotate-1"
+                    className="object-cover transition-all duration-700 group-hover:scale-105"
                     sizes="(max-width: 1024px) 100vw, 50vw"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/30 via-transparent to-transparent transition-opacity duration-500 group-hover:from-black/50" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent transition-opacity duration-500 group-hover:from-black/40" />
                   <div className="absolute inset-0 bg-gold/10 opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 </div>
               </div>

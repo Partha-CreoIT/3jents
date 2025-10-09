@@ -94,19 +94,19 @@ const founders = [
     name: 'Nick Bella',
     role: 'Co-Founder & Producer',
     bio: 'Hi! I\'m Nick Bella, a proud founding member of 3 Jokers and alumni of NYU Tisch. My artistic story began early on, through my childhood fascination with comedy and horror movies. I feel most alive when I\'m laughing… or scared. So when I\'m not working creatively you\'ll likely find me doing something that makes the heart skip. If you suggested skydiving or trying the world\'s hottest pepper? I\'d say, "I\'m in." These interests, along with my affinity for activism and changemaking, eventually led me to NYU. During my time there, I honed my professional skills as an actor, producer, writer, content-creator, and director. I have both led and performed in a variety of professional projects from short films, to theatrical plays! I firmly believe that it is up to young artists of the world to not only entertain, but to question, comment on, and mold the ever-changing world around us in pursuit of something greater. You have the power to change the future. What is the ocean if not just many, many droplets of water? Let\'s create together.',
-    imageUrl: '/founder_1.png',
+    imageUrl: '/founder/nick.png',
   },
   {
     name: 'Vish Ishaan',
     role: 'Co-Founder & Technical Director',
     bio: 'Hey, I\'m Vish! I\'m a storyteller at heart with a creative energy that colors outside the lines. I believe entertainment is more than an escape - it\'s a way to connect, heal, and spark change. As a proud first gen Indian-American, my mission extends beyond personal success: I\'m determined to reshape Hollywood so people like myself are not only seen but celebrated. If I\'m not acting: I\'m directing, writing, editing, graphic designing, or pouring my heart out into music. My relentless drive to tell stories with impact is the throughline of it all. Having had the chance to act on major network television and in national commercials, I sharpened my ability to perform under pressure while staying grounded and adaptable. I\'m also an NYU Tisch alum with a minor in the Business of Entertainment, combining artistry with strategy in everything I do. Beyond credentials, what attracts collaborators is my energy - helpful, open-hearted, and empathetic - fueled by my loved ones, comics, tech, and a deep-rooted belief to be in constant pursuit of greatness.',
-    imageUrl: '/founder_2.png',
+    imageUrl: '/founder/vish.webp',
   },
   {
     name: 'Aydin Byrd',
     role: 'Co-Founder & Creative Director',
     bio: 'I\'m Aydin Byrd, one of the 3 Jokers. As a recent graduate of NYU Tisch, I double majored in Acting and Political Science, and I\'m grateful for every classroom, rehearsal, and conversation that taught me how stories are made and why they matter. My work is driven by an interest in the complexities and contradictions of ordinary life, and I try to translate that into straightforward, authentic, and entertaining storytelling. Ultimately, I love stories and the people who tell them. I love acting and producing because they let me work alongside amazing artists — people whose unique voices and vulnerability teach me more about the world than any curriculum. And I love learning; currently, I\'m in law school pursuing an education in entertainment law with a focus on Intellectual Property, and I hope to use my legal education to improve legal protections for the working artists that help create the cultural fabric of our world.',
-    imageUrl: '/founder/founder.png',
+    imageUrl: '/founder/aydin.webp',
   },
 ];
 
@@ -393,7 +393,9 @@ export default function Home() {
       </SectionWrapper>
 
       {/* Founders Section */}
-      <FoundersSection founders={founders} />
+      <div id="founders">
+        <FoundersSection founders={founders} />
+      </div>
 
       {/* Freelancers Section */}
       <SectionWrapper className="bg-gradient-to-br from-black/25 via-gold/12 to-black/35 backdrop-blur-md py-24 md:py-32">
@@ -552,59 +554,6 @@ export default function Home() {
         </div>
       </SectionWrapper>
 
-      {/* House Employees Section */}
-      {/* <SectionWrapper className="py-24 md:py-32">
-        <div className="max-w-5xl mx-auto px-4">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-bold text-gold mb-6">
-              Our House Team
-            </h3>
-            <p className="text-grey-light max-w-2xl mx-auto text-lg">
-              The dedicated professionals who form the core of our operations and drive our vision forward.
-            </p>
-            <div className="mt-8">
-              <ContactDialog onClick={() => copyToClipboard(contactInfo.email)}>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-gold text-gold hover:bg-gold hover:text-white font-semibold px-8 py-3 font-accent"
-                >
-                  Get In Touch
-                </Button>
-              </ContactDialog>
-            </div>
-          </div>
-          <div className="bg-black/60 rounded-lg p-10 md:p-16 border border-gold/20">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
-              <div>
-                <h4 className="text-xl font-semibold text-gold mb-6">Leadership</h4>
-                <div className="space-y-4 text-grey-light">
-                  <div>
-                    <span className="font-medium text-white">Founders:</span> {houseEmployees.founders.join(', ')}
-                  </div>
-                  <div>
-                    <span className="font-medium text-white">CFO:</span> {houseEmployees.cfo.join(', ')}
-                  </div>
-                  <div>
-                    <span className="font-medium text-white">Producers:</span> {houseEmployees.producers.join(', ')}
-                  </div>
-                </div>
-              </div>
-              <div>
-                <h4 className="text-xl font-semibold text-gold mb-6">Creative & Operations</h4>
-                <div className="space-y-4 text-grey-light">
-                  <div>
-                    <span className="font-medium text-white">Photographers:</span> {houseEmployees.photographers.join(', ')}
-                  </div>
-                  <div>
-                    <span className="font-medium text-white">Investors:</span> {houseEmployees.investors.join(', ')}
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </SectionWrapper> */}
     </div>
   );
 }
