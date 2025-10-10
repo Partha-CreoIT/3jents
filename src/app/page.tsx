@@ -186,9 +186,14 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/5 to-black/30">
+      {/* Subtle Background Pattern */}
+      <div className="absolute inset-0 opacity-5 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,_theme(colors.gold)_0%,_transparent_50%)] opacity-10"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_20%,_theme(colors.gold)_0%,_transparent_50%)] opacity-10"></div>
+      </div>
       {/* Hero Section */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-screen flex items-center justify-center overflow-hidden z-10">
         {/* Video Background */}
         <video
           autoPlay
