@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowLeft } from 'lucide-react';
 import Link from 'next/link';
-import PhotoCarousel from '@/components/PhotoCarousel';
+import Image from 'next/image';
 
 interface CrewMember {
   name: string;
@@ -209,9 +209,11 @@ export default function ProjectPage() {
           key={index}
           className="flex-shrink-0 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/40 transition-all duration-300 bg-black/40"
         >
-          <img
+          <Image
             src={photo}
             alt={`${project.title} photo ${index + 1}`}
+            width={400}
+            height={256}
             className="h-56 md:h-64 w-auto object-contain rounded-lg"
           />
         </div>

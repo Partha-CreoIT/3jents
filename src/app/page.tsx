@@ -498,7 +498,7 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Film Production</h3>
                 <p className="text-grey-light text-sm leading-relaxed">
-                  We're more than just producers! We offer a wide variety of services from pre-production to post-production.
+                  We&apos;re more than just producers! We offer a wide variety of services from pre-production to post-production.
                 </p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjprDcsRwg3daCue2P3Gmly1E4BWohu9tAXmkiXLEjzBLeaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
                   <Button
@@ -585,7 +585,7 @@ export default function Home() {
                 <div className="flex-grow">
                   <h3 className="text-xl font-semibold text-gold">Contracts & Onboarding Agreements</h3>
                   <p className="text-grey-light text-sm leading-relaxed">
-                    <span className="font-bold text-gold">Behind every great scene is solid paperwork.</span> From onboarding forms to contracts and NDA's, we'll make sure your paperwork is handled, secure, and shoot-ready. Includes custom agreements for cast, crew, collaborators, and more.
+                    <span className="font-bold text-gold">Behind every great scene is solid paperwork.</span> From onboarding forms to contracts and NDA&apos;s, we&apos;ll make sure your paperwork is handled, secure, and shoot-ready. Includes custom agreements for cast, crew, collaborators, and more.
                   </p>
                 </div>
                 {/* Spacer for button alignment */}
@@ -616,7 +616,7 @@ export default function Home() {
               What Our Clients Say
             </h2>
             <p className="text-grey-light text-lg max-w-2xl mx-auto">
-              Don't just take our word for it. Here's what our clients have to say about working with 3 Jokers Entertainment.
+              Don&apos;t just take our word for it. Here&apos;s what our clients have to say about working with 3 Jokers Entertainment.
             </p>
           </div>
 
@@ -628,7 +628,7 @@ export default function Home() {
                   ★★★★★
                 </div>
                 <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  "Nick and his crew were exceptional—friendly, respectful, and highly professional. Communication was smooth and timely from booking through wrap, and they kept the space organized, cleaning as they went and leaving it spotless."
+                  &ldquo;Nick and his crew were exceptional—friendly, respectful, and highly professional. Communication was smooth and timely from booking through wrap, and they kept the space organized, cleaning as they went and leaving it spotless.&rdquo;
                 </p>
                 <div className="text-gold font-semibold">Ken L.</div>
                 <div className="text-grey-light text-sm">Peer Space</div>
@@ -642,7 +642,7 @@ export default function Home() {
                   ★★★★★
                 </div>
                 <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  "Nick and his 3JE crew helped bring my vision to life with a clarity and efficiency that I was never expecting from a new production house. His willingness to help collaborate at every stage made the process an easy ride from start to finish."
+                  &ldquo;Nick and his 3JE crew helped bring my vision to life with a clarity and efficiency that I was never expecting from a new production house. His willingness to help collaborate at every stage made the process an easy ride from start to finish.&rdquo;
                 </p>
                 <div className="text-gold font-semibold">Winter M.</div>
                 <div className="text-grey-light text-sm">Client</div>
@@ -656,7 +656,7 @@ export default function Home() {
                   ★★★★★
                 </div>
                 <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  "Working with 3jents was extremely easy. They followed through on everything they said they would when shooting in my apartment. Very efficient and clean, causing no trouble for me and my roommates."
+                  &ldquo;Working with 3jents was extremely easy. They followed through on everything they said they would when shooting in my apartment. Very efficient and clean, causing no trouble for me and my roommates.&rdquo;
                 </p>
                 <div className="text-gold font-semibold">Max W.</div>
                 <div className="text-grey-light text-sm">Client</div>

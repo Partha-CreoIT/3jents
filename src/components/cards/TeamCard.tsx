@@ -27,9 +27,11 @@ export default function TeamCard({
     <Card className="bg-black/50 border-gold/20 overflow-hidden hover:border-gold/40 hover:shadow-lg hover:shadow-gold/20 transition-all duration-300 group py-0">
       {imageUrl && (
         <div className="relative h-[32rem] md:h-[36rem] w-full overflow-hidden rounded-t-xl">
-          <img
+          <Image
             src={imageUrl}
             alt={name}
+            width={400}
+            height={576}
             className="absolute inset-0 w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
             onError={(e) => {
               console.error('Image failed to load:', imageUrl, e);

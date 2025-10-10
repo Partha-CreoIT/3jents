@@ -53,7 +53,7 @@ export default function Header() {
     setIsMobileMenuOpen(false);
   };
 
-  const handleNavClick = (sectionId: string | null, href?: string) => {
+  const handleNavClick = (sectionId: string | null) => {
     if (sectionId) {
       if (sectionId === 'home') {
         // Navigate to home page and scroll to top

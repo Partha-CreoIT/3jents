@@ -1,8 +1,9 @@
 'use client'
 
-import { useState, useEffect } from 'react'
 import { Button } from '@/components/ui/button'
 import { ExternalLink, Home } from 'lucide-react'
+import Link from 'next/link'
+import Image from 'next/image'
 
 // Photos for the image row
 const communityPhotos = [
@@ -17,13 +18,6 @@ const communityPhotos = [
 ]
 
 export default function GetInvolvedPage() {
-  const [currentPhotoIndex, setCurrentPhotoIndex] = useState(0)
-  const nextPhoto = () => setCurrentPhotoIndex((p) => (p + 1) % communityPhotos.length)
-
-  useEffect(() => {
-    const timer = setInterval(nextPhoto, 5000)
-    return () => clearInterval(timer)
-  }, [])
 
   return (
     <div className="relative min-h-screen bg-black text-white overflow-hidden">
@@ -56,10 +50,10 @@ export default function GetInvolvedPage() {
             variant="ghost"
             className="text-gold hover:text-gold-light hover:bg-gold/10"
           >
-            <a href="/" className="flex items-center space-x-2">
+            <Link href="/" className="flex items-center space-x-2">
               <Home className="w-4 h-4" />
               <span>Home</span>
-            </a>
+            </Link>
           </Button>
         </div>
 
@@ -121,9 +115,11 @@ export default function GetInvolvedPage() {
                   key={index}
                   className="w-60 h-60 flex-shrink-0 bg-black/40 rounded-lg overflow-hidden border border-gold/20 hover:border-gold/40 transition-all"
                 >
-                  <img
+                  <Image
                     src={photo}
                     alt={`Get involved image ${index + 1}`}
+                    width={240}
+                    height={240}
                     className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>

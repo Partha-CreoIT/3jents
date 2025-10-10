@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import Image from 'next/image'
 
 // All unique photography images
 const allImages = [
@@ -49,10 +50,10 @@ export default function PhotographyPage() {
             PROFESSIONAL PHOTOGRAPHY SERVICES
           </h1>
           <p className="text-lg md:text-xl italic text-gray-300 mb-12 leading-relaxed">
-            "From the wildest concerts to artist headshots, we've got you covered. 
-            3 Jokers Entertainment has several customizable packages to suit your photography needs and budget! 
-            Packages start as low as $150 with our amazing in-house photographers. 
-            Contact us to learn more."
+            &ldquo;From the wildest concerts to artist headshots, we&apos;ve got you covered.
+            3 Jokers Entertainment has several customizable packages to suit your photography needs and budget!
+            Packages start as low as $150 with our amazing in-house photographers.
+            Contact us to learn more.&rdquo;
           </p>
 
           {/* CTA Button */}
@@ -86,9 +87,11 @@ export default function PhotographyPage() {
                 key={`${src}-${index}`}
                 className="break-inside-avoid mb-4"
               >
-                <img
+                <Image
                   src={src}
                   alt={`Photography work ${index + 1}`}
+                  width={400}
+                  height={300}
                   className="w-full h-auto object-cover rounded-lg shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-[1.02] border border-gray-800/50"
                   style={{
                     filter: 'brightness(0.95) contrast(1.05)',

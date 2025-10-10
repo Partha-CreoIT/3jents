@@ -39,7 +39,7 @@ export default function ProductionServicesPage() {
               size="lg"
               className="bg-gold hover:bg-gold-light text-black font-bold px-8 py-3 text-lg rounded-full border-2 border-gold hover:border-gold-light transition-all duration-300"
             >
-              Let's get started →
+              Let&apos;s get started →
             </Button>
           </ContactDialog>
         </div>
