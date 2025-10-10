@@ -40,9 +40,7 @@ const photoCredits = [
 export default function PhotographyPage() {
 
   return (
-    <div className="min-h-screen bg-black text-white relative pt-20 md:pt-24">
-      {/* Gradient Background */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black via-gray-900 to-black opacity-90" />
+    <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md text-white relative pt-20 md:pt-24">
 
       {/* Hero Section */}
       <section className="relative py-20 px-6 text-center">
@@ -111,9 +109,16 @@ export default function PhotographyPage() {
         <div className="relative z-10">
           <h3 className="text-2xl md:text-3xl font-bold text-gold mb-8 drop-shadow-lg">PHOTO CREDITS</h3>
           <div className="space-y-3 text-gray-200 max-w-3xl mx-auto bg-black/20 p-6 rounded-lg border border-gold/20">
-            {photoCredits.map((credit, index) => (
-              <p key={index} className="text-sm md:text-base leading-relaxed">{credit}</p>
-            ))}
+            {photoCredits.map((credit, index) => {
+              const [projectName, photographerInfo] = credit.split(' - photographed by ');
+              return (
+                <p key={index} className="text-sm md:text-base leading-relaxed">
+                  <span className="text-gold font-semibold">{projectName.replace(/['"]/g, '')}</span>
+                  {' - photographed by '}
+                  <span className="text-gray-300">{photographerInfo}</span>
+                </p>
+              );
+            })}
           </div>
 
           {/* Final CTA Button */}

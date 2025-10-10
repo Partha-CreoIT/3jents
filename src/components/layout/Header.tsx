@@ -124,7 +124,7 @@ export default function Header() {
               onMouseEnter={() => item.hasDropdown && !isServicePage && setActiveDropdown(item.name)}
               onMouseLeave={() => setActiveDropdown(null)}
               className={`!cursor-pointer transition-colors font-medium text-[15px] px-3 py-1.5 rounded-lg whitespace-nowrap ${
-                pathname === item.href || (isServicePage && (item.name === 'Photography' || item.name === 'Production Services'))
+                pathname === item.href
                   ? 'text-gold bg-gold/10'
                   : 'text-white hover:text-gold hover:bg-gold/5'
               }`}
@@ -247,7 +247,7 @@ export default function Header() {
                       rel={item.external ? "noopener noreferrer" : undefined}
                       onClick={closeMobileMenu}
                       className={`!cursor-pointer block py-3 px-4 rounded-lg text-base font-medium transition-colors ${
-                        pathname === item.href || (isServicePage && (item.name === 'Photography' || item.name === 'Production Services'))
+                        pathname === item.href
                           ? 'text-gold bg-gold/10'
                           : 'text-white hover:text-gold hover:bg-gold/10'
                       }`}

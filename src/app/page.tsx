@@ -114,32 +114,46 @@ const freelancers = [
   {
     name: 'Emma Cort',
     role: 'Photographer',
-    bio: 'Talented photographer specializing in capturing authentic moments and creating visual narratives that tell compelling stories. Expert in both studio and location shoots with a keen eye for composition and lighting.',
-    trades: ['Photography', 'Portraiture', 'Event Photography'],
+    bio: 'Multi-hyphenated artist bringing her full self to every job.',
+    trades: ['Photographer', 'Actor', 'Writer'],
+    imageUrl: '/network/emma.webp',
   },
   {
     name: 'Naira Sarin Jain',
-    role: 'Photographer & Intimacy Coordinator',
-    bio: 'Versatile creative professional combining photography expertise with intimacy coordination skills. Creates safe, respectful environments while capturing beautiful, authentic visual stories.',
-    trades: ['Photography', 'Intimacy Coordination', 'Production Support'],
+    role: 'Photographer, Director',
+    bio: 'A versatile creative professional creating safe, respectful environments while capturing authentic visual stories.',
+    trades: ['Director', 'Photographer', 'Intimacy coordinator'],
+    imageUrl: '/network/naira.jpg',
+    websiteUrl: 'https://drive.google.com/drive/folders/1--H1hbacD0zzGJIJDP-KDZKc_IvC1xvG?usp=share_link',
   },
   {
     name: 'Safin Karim',
     role: 'Composer',
-    bio: 'Innovative composer creating original scores that enhance emotional depth and narrative impact. Specializes in blending contemporary and traditional elements to create memorable soundscapes.',
+    bio: 'Innovative composer creating original scores that enhance emotional depth and narrative impact',
     trades: ['Composition', 'Music Production', 'Sound Design'],
+    imageUrl: '/network/safin.webp',
+    websiteUrl: 'https://www.safinkarim.com/headshots',
   },
   {
     name: 'Olivia Martin',
     role: 'Actress, Stage Manager & Assistant Director',
-    bio: 'Multi-talented performer and production professional bringing depth and expertise to both acting and behind-the-scenes roles. Ensures smooth production flow while delivering compelling performances.',
-    trades: ['Acting', 'Stage Management', 'Assistant Directing'],
+    bio: 'Multi-hyphenated artist bringing depth and expertise to both her on screen and behind-the-scenes roles.',
+    trades: ['Actor', 'Stage Management', 'Assistant Directing'],
+    imageUrl: '/network/olivia.webp',
   },
   {
     name: 'Carl Coetzee',
     role: 'DP, Editor & Gaffer',
-    bio: 'Technical virtuoso excelling in cinematography, editing, and lighting. Creates visually stunning work from initial capture through final post-production, ensuring every frame serves the story.',
+    bio: 'Technical virtuoso excelling in cinematography, editing, and lighting.',
     trades: ['Cinematography', 'Video Editing', 'Lighting Design'],
+    imageUrl: '/network/carl.webp',
+  },
+  {
+    name: 'Aidan Samwick',
+    role: 'Photographer, Actor, DP',
+    bio: 'Multi-hyphenated artist and problem solving powerhouse with great hair to match.',
+    trades: ['Photographer', 'Actor', 'DP'],
+    imageUrl: '/network/aidan.jpg',
   },
 ];
 
@@ -425,6 +439,8 @@ export default function Home() {
                 role={freelancer.role}
                 bio={freelancer.bio}
                 trades={freelancer.trades}
+                imageUrl={freelancer.imageUrl}
+                websiteUrl={freelancer.websiteUrl}
               />
             ))}
           </div>
@@ -446,7 +462,7 @@ export default function Home() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
             {/* Theater Production */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 11H5m14 0a2 2 0 012 2v6a2 2 0 01-2 2H5a2 2 0 01-2-2v-6a2 2 0 012-2m14 0V9a2 2 0 00-2-2M5 11V9a2 2 0 012-2m0 0V5a2 2 0 012-2h6a2 2 0 012 2v2M7 7h10" />
@@ -454,7 +470,6 @@ export default function Home() {
                 </div>
                 <h3 className="text-xl font-semibold text-gold">Theater Production</h3>
                 <p className="text-grey-light text-sm leading-relaxed">
-                  
                   Full-scale theatrical productions. We work with you from script development to opening night.
                 </p>
                 <a href="https://docs.google.com/forms/d/e/1FAIpQLSfjprDcsRwg3daCue2P3Gmly1E4BWohu9tAXmkiXLEjzBLeaw/viewform?usp=header" target="_blank" rel="noopener noreferrer">
@@ -470,7 +485,7 @@ export default function Home() {
 
             {/* Film Production */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z" />
@@ -493,7 +508,7 @@ export default function Home() {
 
             {/* Photography */}
             <div className="bg-black/50 border border-gold/20 rounded-lg p-8 hover:border-gold/40 transition-colors">
-              <div className="text-center space-y-4">
+              <div className="text-center space-y-4 min-h-[280px] flex flex-col justify-between">
                 <div className="w-16 h-16 mx-auto bg-gold/10 rounded-full flex items-center justify-center">
                   <svg className="w-8 h-8 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z" />

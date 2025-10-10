@@ -38,7 +38,7 @@ export default function CollaborationsPage() {
   };
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md">
       {/* Back Button */}
       <div className="absolute top-6 left-6 z-10">
         <Button

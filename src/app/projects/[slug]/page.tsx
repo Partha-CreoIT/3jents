@@ -145,7 +145,7 @@ export default function ProjectPage() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gold mb-4">Loading...</h1>
         </div>
@@ -155,7 +155,7 @@ export default function ProjectPage() {
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-black flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-black/20 via-gold/10 to-black/30 backdrop-blur-md flex items-center justify-center">
         <div className="text-center">
           <h1 className="text-4xl font-bold text-gold mb-4">Project Not Found</h1>
           <Link href="/">
