@@ -11,26 +11,26 @@ const reels = [
   {
     title: 'Shiesty',
     filename: 'Shiesty v2.mov',
-    description: 'A dynamic short exploring street culture and urban narratives.',
-    type: 'Short Film'
-  },
-  {
-    title: 'Foot Driver',
-    filename: 'FootDriver-FINALMOV.mov',
-    description: 'An action-packed comedy following an unlikely hero behind the wheel.',
+    description: 'Mom said we look nice!',
     type: 'Comedy Short'
-  },
-  {
-    title: 'Bathroom Restock',
-    filename: 'Bathroom-Restock-final-2.mp4',
-    description: 'A hilarious take on everyday workplace absurdity.',
-    type: 'Sketch Comedy'
   },
   {
     title: 'Water With Random Shit Cut Up In It',
     filename: 'WaterWithRandomSh_tCutUpInIt-final.MOV',
     description: 'An experimental piece blending humor and surreal elements.',
     type: 'Experimental Short'
+  },
+  {
+    title: 'Bathroom Restock',
+    filename: 'Bathroom-Restock-final-2.mp4',
+    description: 'A mother does what she can for her son.',
+    type: 'Sketch Comedy'
+  },
+  {
+    title: 'Foot Driver',
+    filename: 'FootDriver-FINALMOV.mov',
+    description: 'Lemme drive the boat - Kodak Black',
+    type: 'Comedy Short'
   }
 ];
 
@@ -72,8 +72,16 @@ export default function ArchivePage() {
           transition={{ duration: 0.6 }}
           className="text-4xl md:text-5xl font-bold text-gold mb-4"
         >
-          Our Archive
+          Shorts & Reels
         </motion.h1>
+        <motion.p
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="text-lg md:text-xl text-grey-light max-w-2xl mx-auto"
+        >
+          Our complete archive of shorts, past projects, and creative explorations
+        </motion.p>
       </div>
 
       {/* Reels Grid */}
@@ -137,6 +145,43 @@ export default function ArchivePage() {
               </motion.div>
             ))}
           </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Instagram CTA Section */}
+      <SectionWrapper className="bg-gradient-to-br from-black/60 via-gold/10 to-black/40 backdrop-blur-md py-16">
+        <div className="max-w-4xl mx-auto text-center px-4">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6 }}
+            className="space-y-6"
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+              Check out our Instagram
+            </h2>
+            <p className="text-lg md:text-xl text-grey-light mb-8">
+              Follow <span className="text-gold font-semibold">@3jents</span> for more behind-the-scenes content, project updates, and creative inspiration.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+              <Button
+                asChild
+                className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-semibold px-8 py-3 rounded-full"
+              >
+                <a
+                  href="https://www.instagram.com/3jents"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center space-x-2"
+                >
+                  <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                  </svg>
+                  <span>Follow @3jents</span>
+                </a>
+              </Button>
+            </div>
+          </motion.div>
         </div>
       </SectionWrapper>
 

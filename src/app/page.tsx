@@ -339,9 +339,9 @@ export default function Home() {
             </div>
             <Link href="/archive">
               <div className="bg-black/50 border border-gold/20 rounded-lg p-8 text-center hover:border-gold/40 transition-all duration-300 cursor-pointer hover:bg-black/60">
-                <h4 className="text-xl font-semibold text-gold mb-4">Archive</h4>
+                <h4 className="text-xl font-semibold text-gold mb-4">Shorts & Reels</h4>
                 <p className="text-grey-light">
-                  Our complete archive of past projects, experiments, and creative explorations.
+                  Our complete archive of shorts, past projects, and creative explorations
                 </p>
                 <div className="mt-4 text-gold/60 text-sm">
                   View our shorts & reels →
@@ -599,6 +599,64 @@ export default function Home() {
                 Get In Touch About Services
               </Button>
             </a>
+          </div>
+        </div>
+      </SectionWrapper>
+
+      {/* Company Reviews Section */}
+      <SectionWrapper className="bg-gradient-to-br from-black/60 via-gold/5 to-black/40 backdrop-blur-md py-16">
+        <div className="max-w-6xl mx-auto px-4">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-gold mb-4">
+              What Our Clients Say
+            </h2>
+            <p className="text-grey-light text-lg max-w-2xl mx-auto">
+              Don't just take our word for it. Here's what our clients have to say about working with 3 Jokers Entertainment.
+            </p>
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+            {/* Review 1 */}
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
+              <div className="mb-4">
+                <div className="flex text-gold mb-2">
+                  ★★★★★
+                </div>
+                <p className="text-grey-light text-sm leading-relaxed mb-4">
+                  "Nick and his crew were exceptional—friendly, respectful, and highly professional. Communication was smooth and timely from booking through wrap, and they kept the space organized, cleaning as they went and leaving it spotless."
+                </p>
+                <div className="text-gold font-semibold">Ken L.</div>
+                <div className="text-grey-light text-sm">Peer Space</div>
+              </div>
+            </div>
+
+            {/* Review 2 */}
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
+              <div className="mb-4">
+                <div className="flex text-gold mb-2">
+                  ★★★★★
+                </div>
+                <p className="text-grey-light text-sm leading-relaxed mb-4">
+                  "Nick and his 3JE crew helped bring my vision to life with a clarity and efficiency that I was never expecting from a new production house. His willingness to help collaborate at every stage made the process an easy ride from start to finish."
+                </p>
+                <div className="text-gold font-semibold">Winter M.</div>
+                <div className="text-grey-light text-sm">Client</div>
+              </div>
+            </div>
+
+            {/* Review 3 */}
+            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
+              <div className="mb-4">
+                <div className="flex text-gold mb-2">
+                  ★★★★★
+                </div>
+                <p className="text-grey-light text-sm leading-relaxed mb-4">
+                  "Working with 3jents was extremely easy. They followed through on everything they said they would when shooting in my apartment. Very efficient and clean, causing no trouble for me and my roommates."
+                </p>
+                <div className="text-gold font-semibold">Max W.</div>
+                <div className="text-grey-light text-sm">Client</div>
+              </div>
+            </div>
           </div>
         </div>
       </SectionWrapper>
