@@ -62,7 +62,7 @@ export default function GetInvolvedPage() {
           <div className="max-w-4xl mx-auto text-center">
             <div className="space-y-4 mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gold leading-tight font-heading">
-                SUBMIT TO STONER COMEDY
+                Submit to be a part of the 3 Jokers
               </h1>
               <h2 className="text-2xl md:text-3xl font-bold text-gold font-heading">
                 CREATIVE TEAM

@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import { Button } from '@/components/ui/button';
 import SectionWrapper from '@/components/sections/SectionWrapper';
@@ -162,6 +162,8 @@ const contactInfo = {
 };
 
 export default function Home() {
+  const reviewsRef = useRef<HTMLDivElement>(null);
+
   // Restore scroll position when returning from project page
   useEffect(() => {
     const scrollPosition = sessionStorage.getItem('scrollPosition');
@@ -174,6 +176,20 @@ export default function Home() {
       }, 100);
     }
   }, []);
+
+  const handleScrollNext = () => {
+    if (reviewsRef.current) {
+      const container = reviewsRef.current;
+      const cardWidth = 320; // Width of each review card (w-80 = 320px)
+      const gap = 32; // Gap between cards (gap-8 = 32px)
+      const scrollAmount = cardWidth + gap;
+
+      container.scrollBy({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }
+  };
 
   const copyToClipboard = async (text: string) => {
     try {
@@ -620,47 +636,86 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-            {/* Review 1 */}
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
-              <div className="mb-4">
-                <div className="flex text-gold mb-2">
-                  ★★★★★
+          {/* Reviews Carousel for better mobile and desktop experience */}
+          <div className="relative overflow-hidden">
+            <div ref={reviewsRef} className="flex gap-8 overflow-x-auto pb-4 scrollbar-hide snap-x snap-mandatory">
+              {/* Review 1 */}
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors flex-none w-full md:w-80 snap-center flex flex-col">
+                <div className="flex-grow">
+                  <div className="flex text-gold mb-2">
+                    ★★★★★
+                  </div>
+                  <p className="text-grey-light text-sm leading-relaxed mb-4">
+                    &ldquo;Nick and his crew were exceptional—friendly, respectful, and highly professional. Communication was smooth and timely from booking through wrap, and they kept the space organized, cleaning as they went and leaving it spotless.&rdquo;
+                  </p>
                 </div>
-                <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  &ldquo;Nick and his crew were exceptional—friendly, respectful, and highly professional. Communication was smooth and timely from booking through wrap, and they kept the space organized, cleaning as they went and leaving it spotless.&rdquo;
-                </p>
-                <div className="text-gold font-semibold">Ken L.</div>
-                <div className="text-grey-light text-sm">Peer Space</div>
+                <div className="mt-auto">
+                  <div className="text-gold font-semibold">Ken L.</div>
+                  <div className="text-grey-light text-sm">Peer Space</div>
+                </div>
+              </div>
+
+              {/* Review 2 */}
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors flex-none w-full md:w-80 snap-center flex flex-col">
+                <div className="flex-grow">
+                  <div className="flex text-gold mb-2">
+                    ★★★★★
+                  </div>
+                  <p className="text-grey-light text-sm leading-relaxed mb-4">
+                    &ldquo;Nick and his 3JE crew helped bring my vision to life with a clarity and efficiency that I was never expecting from a new production house. His willingness to help collaborate at every stage made the process an easy ride from start to finish.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="text-gold font-semibold">Winter M.</div>
+                  <div className="text-grey-light text-sm">Client</div>
+                </div>
+              </div>
+
+              {/* Review 3 */}
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors flex-none w-full md:w-80 snap-center flex flex-col">
+                <div className="flex-grow">
+                  <div className="flex text-gold mb-2">
+                    ★★★★★
+                  </div>
+                  <p className="text-grey-light text-sm leading-relaxed mb-4">
+                    &ldquo;Working with 3jents was extremely easy. They followed through on everything they said they would when shooting in my apartment. Very efficient and clean, causing no trouble for me and my roommates.&rdquo;
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="text-gold font-semibold">Max W.</div>
+                  <div className="text-grey-light text-sm">Client</div>
+                </div>
+              </div>
+
+              {/* Review 4 - Joseph B. */}
+              <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors flex-none w-full md:w-80 snap-center flex flex-col">
+                <div className="flex-grow">
+                  <div className="flex text-gold mb-2">
+                    ★★★★★
+                  </div>
+                  <p className="text-grey-light text-sm leading-relaxed mb-4">
+                    &ldquo;3JE was great to direct with, Nick was so supportive of my vision with his writing. He's diligent and always accessible for anything that comes up!&rdquo;
+                  </p>
+                </div>
+                <div className="mt-auto">
+                  <div className="text-gold font-semibold">Joseph B.</div>
+                  <div className="text-grey-light text-sm">Client</div>
+                </div>
               </div>
             </div>
 
-            {/* Review 2 */}
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
-              <div className="mb-4">
-                <div className="flex text-gold mb-2">
-                  ★★★★★
-                </div>
-                <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  &ldquo;Nick and his 3JE crew helped bring my vision to life with a clarity and efficiency that I was never expecting from a new production house. His willingness to help collaborate at every stage made the process an easy ride from start to finish.&rdquo;
-                </p>
-                <div className="text-gold font-semibold">Winter M.</div>
-                <div className="text-grey-light text-sm">Client</div>
-              </div>
-            </div>
-
-            {/* Review 3 */}
-            <div className="bg-black/50 border border-gold/20 rounded-lg p-6 hover:border-gold/40 transition-colors">
-              <div className="mb-4">
-                <div className="flex text-gold mb-2">
-                  ★★★★★
-                </div>
-                <p className="text-grey-light text-sm leading-relaxed mb-4">
-                  &ldquo;Working with 3jents was extremely easy. They followed through on everything they said they would when shooting in my apartment. Very efficient and clean, causing no trouble for me and my roommates.&rdquo;
-                </p>
-                <div className="text-gold font-semibold">Max W.</div>
-                <div className="text-grey-light text-sm">Client</div>
-              </div>
+            {/* Scroll Indicator */}
+            <div className="absolute right-2 top-1/2 -translate-y-1/2 z-10">
+              <button
+                onClick={handleScrollNext}
+                className="bg-gold/20 hover:bg-gold/30 rounded-full p-2 transition-colors"
+                style={{ cursor: 'SystemMouseCursors.click' }}
+                aria-label="Scroll to next review"
+              >
+                <svg className="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
