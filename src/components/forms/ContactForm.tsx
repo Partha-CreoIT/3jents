@@ -29,19 +29,26 @@ export default function ContactForm() {
     setSubmitMessage('');
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formspree.io/f/xldpobek', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(data),
+        body: JSON.stringify({
+          'First Name': data.firstName,
+          'Last Name': data.lastName,
+          'Email': data.email,
+          'Message': data.message,
+        }),
       });
 
       if (response.ok) {
         setSubmitMessage('Message sent successfully!');
         reset();
       } else {
-        setSubmitMessage('Failed to send message. Please try again.');
+        const errorData = await response.json().catch(() => ({}));
+        setSubmitMessage(errorData.error || 'Failed to send message. Please try again.');
       }
     } catch (error) {
       console.error('Contact form error:', error);

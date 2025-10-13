@@ -258,33 +258,41 @@ export default function ProjectPage() {
 
             {/* Contact Form */}
             <div className="max-w-md mx-auto">
-              <form className="space-y-6">
+              <form action="https://formspree.io/f/xldpobek" method="POST" className="space-y-6">
                 <div>
                   <input
                     type="text"
+                    name="First Name"
                     placeholder="First name"
                     className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="text"
+                    name="Last Name"
                     placeholder="Last name"
                     className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                    required
                   />
                 </div>
                 <div>
                   <input
                     type="email"
+                    name="Email"
                     placeholder="Email"
                     className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold"
+                    required
                   />
                 </div>
                 <div>
                   <textarea
+                    name="Message"
                     rows={4}
                     placeholder="Write a message"
                     className="w-full px-4 py-3 bg-white/10 border border-gold/30 rounded-md text-white placeholder-grey-light focus:outline-none focus:border-gold focus:ring-1 focus:ring-gold resize-none"
+                    required
                   ></textarea>
                 </div>
                 <Button

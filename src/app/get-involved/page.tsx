@@ -133,7 +133,8 @@ export default function GetInvolvedPage() {
           <div className="max-w-3xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-gold mb-8">CONTACT US</h2>
             <form
-              onSubmit={(e) => e.preventDefault()}
+              action="https://formspree.io/f/xldpobek"
+              method="POST"
               className="grid grid-cols-1 md:grid-cols-2 gap-6 text-left"
             >
               {/* First Name */}
@@ -141,8 +142,10 @@ export default function GetInvolvedPage() {
                 <label className="block text-gold mb-2 font-semibold">First Name</label>
                 <input
                   type="text"
+                  name="First Name"
                   placeholder="Enter your first name"
                   className="w-full px-4 py-3 rounded-md bg-black/70 text-white border border-gold/30 focus:border-gold outline-none transition"
+                  required
                 />
               </div>
 
@@ -151,8 +154,10 @@ export default function GetInvolvedPage() {
                 <label className="block text-gold mb-2 font-semibold">Last Name</label>
                 <input
                   type="text"
+                  name="Last Name"
                   placeholder="Enter your last name"
                   className="w-full px-4 py-3 rounded-md bg-black/70 text-white border border-gold/30 focus:border-gold outline-none transition"
+                  required
                 />
               </div>
 
@@ -161,8 +166,10 @@ export default function GetInvolvedPage() {
                 <label className="block text-gold mb-2 font-semibold">Email</label>
                 <input
                   type="email"
+                  name="Email"
                   placeholder="Enter your email address"
                   className="w-full px-4 py-3 rounded-md bg-black/70 text-white border border-gold/30 focus:border-gold outline-none transition"
+                  required
                 />
               </div>
 
@@ -170,9 +177,11 @@ export default function GetInvolvedPage() {
               <div className="md:col-span-2">
                 <label className="block text-gold mb-2 font-semibold">Message</label>
                 <textarea
+                  name="Message"
                   placeholder="Write your message..."
                   rows={5}
                   className="w-full px-4 py-3 rounded-md bg-black/70 text-white border border-gold/30 focus:border-gold outline-none transition resize-none"
+                  required
                 />
               </div>
 
