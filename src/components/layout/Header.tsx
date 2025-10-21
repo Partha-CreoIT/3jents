@@ -75,11 +75,11 @@ export default function Header() {
 
   return (
     <>
-      <header className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50 
-  bg-black/85 backdrop-blur-xl border border-gold/20 rounded-full 
-  px-6 md:px-10 py-2 shadow-2xl w-[98%] md:w-auto max-w-6xl">
-  
-  <div className="flex items-center justify-between w-full space-x-4 md:space-x-8">
+      <header className="fixed top-2 md:top-4 left-1/2 transform -translate-x-1/2 z-50
+  bg-black/85 backdrop-blur-xl border border-gold/20 rounded-full
+  px-4 md:px-8 py-2 shadow-2xl w-[95%] md:w-auto max-w-5xl min-w-fit">
+
+  <div className="flex items-center justify-between w-full gap-2 md:gap-4">
     
     {/* Logo */}
     <div className="flex items-center flex-shrink-0">
@@ -95,7 +95,7 @@ export default function Header() {
     </div>
 
     {/* Navigation */}
-    <nav className="hidden lg:flex items-center space-x-6 xl:space-x-8">
+    <nav className="hidden lg:flex items-center space-x-4 xl:space-x-6">
       {filteredNavigation.map((item) => (
         <div key={item.name} className="relative flex items-center">
           {item.sectionId ? (
@@ -161,8 +161,8 @@ export default function Header() {
     </nav>
 
     {/* Social Links */}
-    <div className="flex items-center space-x-2 md:space-x-3">
-      <div className="hidden sm:flex items-center space-x-2 md:space-x-3">
+    <div className="flex items-center space-x-1 md:space-x-2">
+      <div className="hidden sm:flex items-center space-x-1 md:space-x-2">
         {socialLinks.map((social) => (
           <Button
             key={social.name}

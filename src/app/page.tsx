@@ -115,7 +115,7 @@ const founders = [
     name: 'Aydin Byrd',
     role: 'Co-Founder, Director of Legal Operations',
     bio: 'I\'m Aydin Byrd, one of the 3 Jokers. As a recent graduate of NYU Tisch, I double majored in Acting and Political Science, and I\'m grateful for every classroom, rehearsal, and conversation that taught me how stories are made and why they matter. My work is driven by an interest in the complexities and contradictions of ordinary life, and I try to translate that into straightforward, authentic, and entertaining storytelling. Ultimately, I love stories and the people who tell them. I love acting and producing because they let me work alongside amazing artists — people whose unique voices and vulnerability teach me more about the world than any curriculum. And I love learning; currently, I\'m in law school pursuing an education in entertainment law with a focus on Intellectual Property, and I hope to use my legal education to improve legal protections for the working artists that help create the cultural fabric of our world.',
-    imageUrl: '/founder/aydin.webp',
+    imageUrl: '/founder/aydin_founder.webp',
   },
 ];
 
