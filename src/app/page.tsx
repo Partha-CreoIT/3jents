@@ -92,19 +92,19 @@ const projects = [
 const founders = [
   {
     name: 'Nick Bella',
-    role: 'Co-Founder & Producer',
+    role: 'Co-Founder, Creative Director',
     bio: 'Hi! I\'m Nick Bella, a proud founding member of 3 Jokers and alumni of NYU Tisch. My artistic story began early on, through my childhood fascination with comedy and horror movies. I feel most alive when I\'m laughing… or scared. So when I\'m not working creatively you\'ll likely find me doing something that makes the heart skip. If you suggested skydiving or trying the world\'s hottest pepper? I\'d say, "I\'m in." These interests, along with my affinity for activism and changemaking, eventually led me to NYU. During my time there, I honed my professional skills as an actor, producer, writer, content-creator, and director. I have both led and performed in a variety of professional projects from short films, to theatrical plays! I firmly believe that it is up to young artists of the world to not only entertain, but to question, comment on, and mold the ever-changing world around us in pursuit of something greater. You have the power to change the future. What is the ocean if not just many, many droplets of water? Let\'s create together.',
     imageUrl: '/founder/nick.png',
   },
   {
     name: 'Vish Ishaan',
-    role: 'Co-Founder & Technical Director',
+    role: 'Co-Founder, Creative Director',
     bio: 'Hey, I\'m Vish! I\'m a storyteller at heart with a creative energy that colors outside the lines. I believe entertainment is more than an escape - it\'s a way to connect, heal, and spark change. As a proud first gen Indian-American, my mission extends beyond personal success: I\'m determined to reshape Hollywood so people like myself are not only seen but celebrated. If I\'m not acting: I\'m directing, writing, editing, graphic designing, or pouring my heart out into music. My relentless drive to tell stories with impact is the throughline of it all. Having had the chance to act on major network television and in national commercials, I sharpened my ability to perform under pressure while staying grounded and adaptable. I\'m also an NYU Tisch alum with a minor in the Business of Entertainment, combining artistry with strategy in everything I do. Beyond credentials, what attracts collaborators is my energy - helpful, open-hearted, and empathetic - fueled by my loved ones, comics, tech, and a deep-rooted belief to be in constant pursuit of greatness.',
     imageUrl: '/founder/vish.webp',
   },
   {
     name: 'Aydin Byrd',
-    role: 'Co-Founder & Creative Director',
+    role: 'Co-Founder, Director of Legal Operations',
     bio: 'I\'m Aydin Byrd, one of the 3 Jokers. As a recent graduate of NYU Tisch, I double majored in Acting and Political Science, and I\'m grateful for every classroom, rehearsal, and conversation that taught me how stories are made and why they matter. My work is driven by an interest in the complexities and contradictions of ordinary life, and I try to translate that into straightforward, authentic, and entertaining storytelling. Ultimately, I love stories and the people who tell them. I love acting and producing because they let me work alongside amazing artists — people whose unique voices and vulnerability teach me more about the world than any curriculum. And I love learning; currently, I\'m in law school pursuing an education in entertainment law with a focus on Intellectual Property, and I hope to use my legal education to improve legal protections for the working artists that help create the cultural fabric of our world.',
     imageUrl: '/founder/aydin.webp',
   },
@@ -124,7 +124,6 @@ const freelancers = [
     bio: 'A versatile creative professional creating safe, respectful environments while capturing authentic visual stories.',
     trades: ['Director', 'Photographer', 'Intimacy coordinator'],
     imageUrl: '/network/naira.jpg',
-    websiteUrl: 'https://drive.google.com/drive/folders/1--H1hbacD0zzGJIJDP-KDZKc_IvC1xvG?usp=share_link',
   },
   {
     name: 'Safin Karim',
@@ -132,7 +131,6 @@ const freelancers = [
     bio: 'Innovative composer creating original scores that enhance emotional depth and narrative impact',
     trades: ['Composition', 'Music Production', 'Sound Design'],
     imageUrl: '/network/safin.webp',
-    websiteUrl: 'https://www.safinkarim.com/headshots',
   },
   {
     name: 'Olivia Martin',

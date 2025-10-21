@@ -29,7 +29,7 @@ const reels = [
   {
     title: 'Foot Driver',
     filename: 'FootDriver-FINALMOV.mov',
-    description: 'Lemme drive the boat - Kodak Black',
+    description: '"Lemme drive the boat" - Kodak Black',
     type: 'Comedy Short'
   }
 ];
