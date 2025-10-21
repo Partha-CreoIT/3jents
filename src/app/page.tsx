@@ -10,6 +10,15 @@ import FoundersSection from '@/components/sections/FoundersSection';
 import ContactDialog from '@/components/forms/ContactDialog';
 import Link from 'next/link';
 
+interface Freelancer {
+  name: string;
+  role: string;
+  bio: string;
+  trades: string[];
+  imageUrl: string;
+  websiteUrl?: string;
+}
+
 // Featured projects with actual poster images
 const projects = [
   {
@@ -110,7 +119,7 @@ const founders = [
   },
 ];
 
-const freelancers = [
+const freelancers: Freelancer[] = [
   {
     name: 'Emma Cort',
     role: 'Photographer',
@@ -459,7 +468,7 @@ export default function Home() {
                 bio={freelancer.bio}
                 trades={freelancer.trades}
                 imageUrl={freelancer.imageUrl}
-                websiteUrl={freelancer.websiteUrl}
+                {...(freelancer.websiteUrl && { websiteUrl: freelancer.websiteUrl })}
               />
             ))}
           </div>
@@ -692,7 +701,7 @@ export default function Home() {
                     ★★★★★
                   </div>
                   <p className="text-grey-light text-sm leading-relaxed mb-4">
-                    &ldquo;3JE was great to direct with, Nick was so supportive of my vision with his writing. He's diligent and always accessible for anything that comes up!&rdquo;
+                    &ldquo;3JE was great to direct with, Nick was so supportive of my vision with his writing. He&apos;s diligent and always accessible for anything that comes up!&rdquo;
                   </p>
                 </div>
                 <div className="mt-auto">
